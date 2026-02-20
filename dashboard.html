@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Jalandhar Fitness Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#000;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center;}
+:root{--b:rgba(255,255,255,0.09);--s:#0d0d0d;--s2:#161616;--m:rgba(255,255,255,0.3);--red:#e05555}
+.screen{display:none;flex-direction:column;align-items:center;gap:14px;padding:40px 24px;max-width:380px;width:100%}
+.screen.on{display:flex}
+.spin{width:34px;height:34px;border:2px solid rgba(255,255,255,0.07);border-top-color:rgba(255,255,255,0.4);border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ring{width:68px;height:68px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:4px;animation:pop 0.45s cubic-bezier(0.175,0.885,0.32,1.275) both}
+@keyframes pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+.ring.err{border-color:rgba(224,85,85,0.3);background:rgba(224,85,85,0.05)}
+.logo-sm{font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.25);text-transform:uppercase;margin-bottom:4px}
+.ttl{font-family:'Cinzel',serif;font-size:19px;font-weight:700;letter-spacing:1px;color:#fff}
+.ttl.red{color:var(--red)}
+.desc{font-size:13px;color:var(--m);line-height:1.75;max-width:290px}
+.infobox{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:13px 16px;width:100%;text-align:left;font-size:13px}
+.ir{display:flex;justify-content:space-between;padding:5px 0;color:var(--m)}
+.ir+.ir{border-top:1px solid var(--b)}
+.ir span:last-child{color:#fff;font-weight:500}
+.btn-w{width:100%;padding:14px;border-radius:11px;border:none;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1.5px;cursor:pointer;background:#fff;color:#000;transition:all 0.2s}
+.btn-w:hover{background:rgba(255,255,255,0.88);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,255,255,0.1)}
+.btn-g{width:100%;padding:12px;border-radius:11px;border:1px solid var(--b);background:transparent;color:var(--m);font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.btn-g:hover{border-color:rgba(255,255,255,0.2);color:#fff}
+</style>
+</head>
+<body>
+<!-- Loading -->
+<div class="screen on" id="s-load"><div class="spin"></div><div style="font-size:12px;color:var(--m);margin-top:8px">Checking membership…</div></div>
+<!-- Pending -->
+<div class="screen" id="s-pend">
+  <div class="logo-sm">Jalandhar Fitness Club</div>
+  <div class="ring">⏳</div>
+  <div class="ttl">Pending Approval</div>
+  <div class="desc">Your account is registered. We approve accounts within <strong style="color:rgba(255,255,255,0.6)">24 hours</strong>. Then you can browse and purchase programs.</div>
+  <div class="infobox"><div class="ir"><span>Status</span><span style="color:rgba(255,255,255,0.55)">Awaiting Activation</span></div><div class="ir"><span>Email</span><span id="pend-email">—</span></div></div>
+  <button class="btn-g" onclick="out()">Sign Out</button>
+</div>
+<!-- No program -->
+<div class="screen" id="s-none">
+  <div class="logo-sm">Jalandhar Fitness Club</div>
+  <div class="ring">🏋️</div>
+  <div class="ttl">No Program Yet</div>
+  <div class="desc">Your account is approved. Browse our programs, choose one, and complete payment to get started.</div>
+  <button class="btn-w" onclick="window.location.href='programs.html'">Browse Programs</button>
+  <button class="btn-g" onclick="out()">Sign Out</button>
+</div>
+<!-- Expired / Revoked -->
+<div class="screen" id="s-exp">
+  <div class="logo-sm">Jalandhar Fitness Club</div>
+  <div class="ring err">✕</div>
+  <div class="ttl red">Access Removed</div>
+  <div class="desc">Your program access has been revoked or has expired. Purchase a new program to continue training.</div>
+  <div class="infobox"><div class="ir"><span>Status</span><span id="exp-status">Expired</span></div><div class="ir"><span>Expired</span><span id="exp-date">—</span></div><div class="ir"><span>Email</span><span id="exp-email">—</span></div></div>
+  <button class="btn-w" onclick="window.location.href='programs.html'">Get a New Program</button>
+  <button class="btn-g" onclick="out()">Sign Out</button>
+</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+const app=initializeApp({apiKey:"AIzaSyCTQDlsZNhZ-I6CvlNgZDPgpJJYlYto6Rk",authDomain:"jalandhar-fitness-club.firebaseapp.com",projectId:"jalandhar-fitness-club",storageBucket:"jalandhar-fitness-club.firebasestorage.app",messagingSenderId:"899365845803",appId:"1:899365845803:web:a75a331462df8b017f236e"});
+const auth=getAuth(app);
+// ── PROGRAM ROUTING MAP ─────────────────────────────────────────────────────
+// Column B in your Google Sheet (exact lowercase value) → HTML file to open
+// Add new programs here as you upload them
+const ROUTES={
+  shred:'shred.html', strength:'strength.html', bikini:'bikini.html',
+  p4:'p4.html', p5:'p5.html', p6:'p6.html', p7:'p7.html',
+  p8:'p8.html', p9:'p9.html', p10:'p10.html'
+};
+// ────────────────────────────────────────────────────────────────────────────
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on')}
+window.out=()=>signOut(auth).then(()=>window.location.href='login.html');
+async function getData(email){
+  try{
+    const t=await(await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQDk6mlT8US0aTZU2iWh6dYX0e4HbGrpmYYdNYEtAzAUeUw0oyAXsZlWr6Ip_Na3jhOHRcUVBELgKgv/pub?output=csv")).text();
+    for(let row of t.split("\n").map(r=>r.trim()).filter(r=>r&&!r.toLowerCase().startsWith("email"))){
+      const p=row.split(",");
+      if((p[0]||"").trim().toLowerCase()===email.toLowerCase())
+        return{program:(p[1]||"").trim().toLowerCase(),expiry:(p[2]||"").trim(),approved:['yes','true'].includes((p[3]||"").trim().toLowerCase()),revoked:['yes','true'].includes((p[4]||"").trim().toLowerCase())};
+    }
+  }catch(e){}
+  return null;
+}
+onAuthStateChanged(auth,async user=>{
+  if(!user){window.location.href='login.html';return}
+  const d=await getData(user.email);
+  if(!d){document.getElementById('pend-email').textContent=user.email;show('s-pend');return}
+  if(!d.approved){document.getElementById('pend-email').textContent=user.email;show('s-pend');return}
+  // Revoked (Column E = yes)
+  if(d.revoked){
+    document.getElementById('exp-status').textContent='Revoked';
+    document.getElementById('exp-date').textContent=d.expiry||'—';
+    document.getElementById('exp-email').textContent=user.email;
+    show('s-exp');return;
+  }
+  if(!d.program){show('s-none');return}
+  // Check expiry
+  if(d.expiry&&new Date()>new Date(d.expiry)){
+    document.getElementById('exp-status').textContent='Expired';
+    document.getElementById('exp-date').textContent=d.expiry;
+    document.getElementById('exp-email').textContent=user.email;
+    show('s-exp');return;
+  }
+  const route=ROUTES[d.program];
+  if(route)window.location.href=route;
+  else show('s-none');
+});
+</script>
+</body>
+</html>

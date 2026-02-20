@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Jalandhar Fitness Club — Strength Builder</title>
+<meta name="theme-color" content="#0b0b0c"/>
+<style>
+:root{--bg:#0b0b0c;--panel:rgba(255,255,255,.04);--panel2:rgba(255,255,255,.02);--text:#f6f6f8;--muted:#a7a7ad;--shadow:0 12px 34px rgba(0,0,0,.55);--r1:18px;--r2:26px;--good:#7CFC9A;--warn:#FFD27A;}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1200px 800px at 50% -20%, rgba(255,255,255,.08), transparent 60%),radial-gradient(900px 600px at 10% 10%, rgba(255,255,255,.05), transparent 55%),var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;letter-spacing:.2px;overflow-x:hidden;}
+.app{max-width:620px;margin:0 auto;min-height:100%;padding:calc(env(safe-area-inset-top) + 14px) 14px calc(env(safe-area-inset-bottom) + 24px);}
+header{position:sticky;top:0;z-index:50;margin:-14px -14px 12px;padding:12px 14px 12px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:linear-gradient(to bottom, rgba(11,11,12,.92), rgba(11,11,12,.55), rgba(11,11,12,0));border-bottom:1px solid rgba(255,255,255,.06);}
+.brand{display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px 0 10px;}
+.brand h1{margin:0;font-size:28px;line-height:1.05;letter-spacing:.7px;font-weight:950;text-transform:uppercase;text-align:center;}
+.brand .sub{margin:0;font-size:12px;color:var(--muted);text-align:center;}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:var(--text);font-weight:950;font-size:12px;letter-spacing:.2px;user-select:none;white-space:nowrap;}
+.pill .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.20);border:1px solid rgba(255,255,255,.25);}
+.topRow{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:6px;}
+.meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;}
+.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:100%;margin-top:10px}
+.btn{appearance:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:var(--text);padding:10px 12px;border-radius:14px;font-weight:950;font-size:12px;cursor:pointer;white-space:nowrap;transition:transform .18s ease, background .18s ease, border-color .18s ease;}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.24);}
+.btn.ghost{background:transparent;border-color:rgba(255,255,255,.10);color:var(--muted);}
+
+.selectWrap{position:relative;display:inline-flex;align-items:center;margin-left:8px}
+.selectWrap::after{content:"▾";position:absolute;right:10px;pointer-events:none;font-size:14px;color:rgba(255,255,255,.90);}
+.selectWrap select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background: rgba(0,0,0,.55);color: var(--text);border: 1px solid rgba(255,255,255,.22);border-radius: 12px;padding: 7px 30px 7px 12px;font-weight: 950;font-size: 12px;line-height: 1;outline: none;}
+.selectWrap select:focus{border-color: rgba(255,255,255,.40);box-shadow: 0 0 0 3px rgba(255,255,255,.08);}
+.selectWrap select option{background:#0b0b0c;color:var(--text);}
+
+.panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid rgba(255,255,255,.08);border-radius:var(--r2);box-shadow:var(--shadow);overflow:hidden;}
+.panelHead{padding:14px 14px 12px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.panelHead h2{margin:0;font-size:16px;font-weight:950;letter-spacing:.2px;text-transform:uppercase;}
+.panelHead p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.25;}
+.content{padding:14px;display:flex;flex-direction:column;gap:12px;}
+.sectionTitle{font-size:12px;color:var(--muted);letter-spacing:.35px;text-transform:uppercase;margin:8px 2px -2px;display:flex;justify-content:space-between;gap:10px;}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--r1);overflow:hidden;}
+.cardInner{display:flex;gap:12px;padding:12px;align-items:center;}
+.thumb{width:78px;height:78px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);overflow:hidden;flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;}
+.thumb svg{width:100%;height:100%}
+.thumb .shine{position:absolute;inset:-40%;background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.10) 45%, transparent 55%);transform:translateX(-30%);animation:shine 4.5s ease-in-out infinite;pointer-events:none;}
+@keyframes shine{0%,55%{transform:translateX(-35%)}100%{transform:translateX(45%)}}
+.info{min-width:0;flex:1}
+.name{margin:0 0 6px;font-weight:950;letter-spacing:.2px;font-size:15px;line-height:1.2;text-transform:uppercase;}
+.detail{margin:0;color:var(--muted);font-size:12px;line-height:1.35;}
+.sets{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);font-size:12px;color:var(--text);cursor:pointer;user-select:none;white-space:nowrap;transition:transform .18s ease, background .18s ease, border-color .18s ease;}
+.chip:active{transform:scale(.98)}
+.chip .dot{width:10px;height:10px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.35);}
+.chip.checked{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.24);}
+.chip.checked .dot{background:var(--good);border-color:rgba(255,255,255,.55);box-shadow:0 0 0 3px rgba(124,252,154,.14);}
+.progressWrap{padding:12px 14px 14px;border-top:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.18);}
+.bar{width:100%;height:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);border-radius:999px;overflow:hidden;}
+.bar>div{height:100%;width:0%;background:linear-gradient(90deg, rgba(255,255,255,.55), rgba(255,255,255,.95));border-radius:999px;transition:width .25s ease;}
+.progressMeta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:12px;color:var(--muted);gap:10px;flex-wrap:wrap;}
+.progressMeta b{color:var(--text)}
+.empty{padding:14px;border:1px dashed rgba(255,255,255,.14);border-radius:var(--r1);background:rgba(255,255,255,.03);color:var(--muted);font-size:13px;line-height:1.4;}
+@media (max-width:380px){.thumb{width:72px;height:72px}.brand h1{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand">
+    <h1>Jalandhar Fitness Club</h1>
+    <p class="sub">Strength Builder • 8 Weeks • Progress Saved</p>
+  </div>
+  <div class="topRow">
+    <div class="meta">
+      <div class="pill" id="metaWeek"><span class="dot"></span><span>Week 1</span></div>
+      <div class="pill" id="metaDay"><span class="dot" style="background:var(--warn)"></span><span>Day 1</span></div>
+      <div class="pill" id="metaTitle"><span class="dot"></span><span>—</span></div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <label class="pill" style="cursor:default">
+      <span class="dot"></span><span>Week</span>
+      <div class="selectWrap"><select id="weekSelect" aria-label="Week">
+        
+        
+        
+        
+        
+        
+        
+        
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      
+      
+      
+      
+      
+      
+      
+      
+      </select></div>
+    </label>
+
+    <label class="pill" style="cursor:default">
+      <span class="dot" style="background:var(--warn)"></span><span>Day</span>
+      <div class="selectWrap"><select id="daySelect" aria-label="Day">
+        <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option>
+        <option value="5">5</option><option value="6">6</option><option value="7">7</option>
+      </select></div>
+    </label>
+
+    <button class="btn ghost" id="resetBtn">Reset Day</button>
+    <button class="btn primary" id="markAllBtn">Mark All</button>
+  </div>
+</header>
+
+<section class="panel">
+  <div class="panelHead">
+    <div>
+      <h2 id="panelTitle">Week 1 • Day 1</h2>
+      <p id="panelSub">Tap sets to check them off. Progress saves automatically.</p>
+    </div>
+  </div>
+  <div class="content" id="content"></div>
+  <div class="progressWrap">
+    <div class="bar"><div id="barFill"></div></div>
+    <div class="progressMeta">
+      <span><b id="progressPct">0%</b> complete</span>
+      <span><span id="progressDone">0</span> / <span id="progressTotal">0</span> sets</span>
+    </div>
+  </div>
+</section>
+</div>
+
+<script>
+
+const SPLIT = {
+  "1": {
+    "1": {
+      title: "Quads, Lower Abs & Calves",
+      morning: [{ name: "AM Cardio", sets: ["20 min"] }],
+      workout: [
+        { name: "Hack Squat", sets: ["15","15","15"] },
+        { name: "Squat Press (Pause 2s)", sets: ["15","15","15"] },
+        { name: "Leg Extension (Drop 10/10/10)", sets: ["10/10/10","10/10/10"] },
+        { name: "Walking Lunges", sets: ["10","10"] },
+        { name: "Bodyweight Squats", sets: ["10","10"] },
+        { name: "Seated Calf Raise", sets: ["30","30","30","30","30"] },
+        { name: "Hanging Leg Raises", sets: ["Failure","Failure","Failure"] },
+        { name: "Lying Leg Raises", sets: ["Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["20 min"] }]
+    },
+    "2": {
+      title: "Chest & Shoulders",
+      morning: [{ name: "AM Cardio", sets: ["20 min"] }],
+      workout: [
+        { name: "DB Chest Press (Triple Drop)", sets: ["10/10/10","10/10/10","10/10/10"] },
+        { name: "Incline Cable Fly", sets: ["12","12","12"] },
+        { name: "DB Floor Press", sets: ["12","12","12"] },
+        { name: "Decline DB Fly", sets: ["12","12","12"] },
+        { name: "Pushups", sets: ["Failure","Failure","Failure"] },
+        { name: "Smith Military Press", sets: ["12","12","12"] },
+        { name: "Cable Upright Row", sets: ["12","12","12"] },
+        { name: "Cable Side Raise", sets: ["12","12","12"] },
+        { name: "Cable Front Raise", sets: ["12","12","12"] },
+        { name: "Rear Delt Raise", sets: ["10","10","10"] },
+        { name: "Standing Rope Pulls", sets: ["10","10","10"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["20 min"] }]
+    },
+    "3": {
+      title: "Arms",
+      morning: [{ name: "AM Cardio", sets: ["20 min"] }],
+      workout: [
+        { name: "Reverse Grip Pushdown", sets: ["12","12","12"] },
+        { name: "Overhead Extension", sets: ["12","12","12"] },
+        { name: "Single Arm Rope Extension", sets: ["10","10","10"] },
+        { name: "Single Arm Kickbacks", sets: ["10","10","10"] },
+        { name: "Close Grip Pushups", sets: ["Failure","Failure","Failure"] },
+        { name: "Bench Dips", sets: ["Failure","Failure","Failure"] },
+        { name: "EZ Spider Curls", sets: ["10","10","10"] },
+        { name: "EZ Bar Curls", sets: ["10","10","10"] },
+        { name: "Reverse DB Curl", sets: ["10","10","10"] },
+        { name: "Hammer Curl", sets: ["10","10","10"] },
+        { name: "Lying Cable Curl", sets: ["10","10","10"] },
+        { name: "Alternating Cable Curl", sets: ["10-12","10-12","10-12"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["20 min"] }]
+    },
+    "4": {
+      title: "Lower Back, Hamstrings & Upper Abs",
+      morning: [{ name: "AM Cardio", sets: ["20 min"] }],
+      workout: [
+        { name: "Deadlifts", sets: ["10","10","10"] },
+        { name: "Seated Ham Curl", sets: ["10","10","10"] },
+        { name: "Glute Ham Raise", sets: ["10","10","10"] },
+        { name: "Stiff Leg Cable Deadlift", sets: ["10","10","10"] },
+        { name: "Decline Cross Situps", sets: ["Failure","Failure","Failure","Failure"] },
+        { name: "Conventional Situps", sets: ["Failure","Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["20 min"] }]
+    },
+    "5": {
+      title: "Upper Back & Calves",
+      morning: [{ name: "AM Cardio", sets: ["20 min"] }],
+      workout: [
+        { name: "Lat Pulldown", sets: ["10","10","10"] },
+        { name: "Pullups", sets: ["10","10","10"] },
+        { name: "Rope Lat Pulldown", sets: ["10","10","10"] },
+        { name: "Single Arm DB Row", sets: ["10","10","10"] },
+        { name: "Single Arm Inverted Row", sets: ["10","10","10"] },
+        { name: "DB Pullovers", sets: ["15","15","15"] },
+        { name: "DB Shrugs", sets: ["15","15","15"] },
+        { name: "Standing Calf Press", sets: ["20","20","20","20","20"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["20 min"] }]
+    },
+    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
+    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
+  }
+,
+  "2": {
+    "1": {
+      title: "Legs, Lower Abs & Calves",
+      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
+      workout: [
+        { name: "Leg Extension (20,10,20)", sets: ["20","10","20"] },
+        { name: "Leg Press (30,20,10,20,30)", sets: ["30","20","10","20","30"] },
+        { name: "Alt Barbell Lunge + Squat Combo", sets: ["10","10","10"] },
+        { name: "Seated Calf Raise (30,20,10,20,30)", sets: ["30","20","10","20","30"] },
+        { name: "Lying Incline Leg Raises", sets: ["15","15","15"] },
+        { name: "Exercise Ball Knee Tuck", sets: ["20","20","20"] },
+        { name: "Plank Hold", sets: ["30s","30s","30s"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+    },
+    "2": {
+      title: "Chest & Shoulders",
+      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
+      workout: [
+        { name: "Hammer Press (20,15,10/10)", sets: ["20","15","10/10"] },
+        { name: "Incline Smith Press (20,10,10/10)", sets: ["20","10","10/10"] },
+        { name: "Seated Cable Fly (20,15,10/10)", sets: ["20","15","10/10"] },
+        { name: "Wide-Hand Pushups", sets: ["Failure","Failure","Failure"] },
+        { name: "Barbell Front Raise + Press Combo", sets: ["10","10","10"] },
+        { name: "Barbell Side Raises (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "DB Rear Delt Fly", sets: ["20","20","20"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+    },
+    "3": {
+      title: "Arms",
+      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
+      workout: [
+        { name: "Overhead Triceps Extension", sets: ["15","15","15"] },
+        { name: "Seated Rope Extension (10/10/10)", sets: ["10/10/10","10/10/10","10/10/10"] },
+        { name: "Dips", sets: ["10","10","10"] },
+        { name: "EZ Spider Curl", sets: ["10-12","10-12","10-12"] },
+        { name: "Standing Banded Curl", sets: ["10-12","10-12","10-12"] },
+        { name: "Low Cable EZ Curl", sets: ["10-12","10-12","10-12"] },
+        { name: "Low Banded Curl", sets: ["8-10","8-10","8-10"] },
+        { name: "Incline DB Curl", sets: ["10","10","10"] },
+        { name: "Seated Banded Curl", sets: ["10","10","10"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+    },
+    "4": {
+      title: "Lower Back, Hamstrings & Upper Abs",
+      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
+      workout: [
+        { name: "Deadlifts (5,5/5,8/8)", sets: ["5","5/5","8/8"] },
+        { name: "Rack Deadlift", sets: ["10","10","10"] },
+        { name: "Banded Good Mornings", sets: ["20","20","20"] },
+        { name: "Lying Ham Curl (20,10/10,10/10/10)", sets: ["20","10/10","10/10/10"] },
+        { name: "Standing Cable Ham Curl", sets: ["20","15","10"] },
+        { name: "Barbell Straight-Arm Situps", sets: ["10","10","10"] },
+        { name: "Barbell Rollouts", sets: ["10","10","10"] },
+        { name: "Crunches", sets: ["10","10","10"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+    },
+    "5": {
+      title: "Upper Back & Calves",
+      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
+      workout: [
+        { name: "Pull-ups (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Hammer Row (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Supported Smith Row (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Cable Straight-Arm Pulldown", sets: ["10","10","10"] },
+        { name: "High Pulley Cable Row", sets: ["10","10","10"] },
+        { name: "Single-Leg DB Calf Raise (30,25,20,20,20)", sets: ["30","25","20","20","20"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+    },
+    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
+    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
+  }
+
+,
+  "3": {
+
+    "1": {
+      title: "Legs, Calves & Lower Abs",
+      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
+      workout: [
+        { name: "Leg Extension (25/25 + 5x10 Pyramid)", sets: ["25/25","10","10","10","10","10"] },
+        { name: "Landmine Squat", sets: ["25","25","25"] },
+        { name: "Hex Bar Squat", sets: ["25","25","25"] },
+        { name: "Bulgarian Split Squat", sets: ["20","20","20"] },
+        { name: "Smith Machine Front Squat", sets: ["20","20","20"] },
+        { name: "Seated Calf Raises", sets: ["30","30","30","30","30"] },
+        { name: "Captain’s Chair Leg Raises", sets: ["20","20","20"] },
+        { name: "Medicine Ball Pass", sets: ["Failure","Failure","Failure"] },
+        { name: "Cross-Body Mountain Climbers", sets: ["Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+    },
+
+    "2": {
+      title: "Chest & Shoulders",
+      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
+      workout: [
+        { name: "Incline DB Fly & Press Combo", sets: ["20","20","20"] },
+        { name: "Incline Close-Grip DB Press", sets: ["10","10","10"] },
+        { name: "Incline DB Press", sets: ["10","10","10"] },
+        { name: "Rollout Fly", sets: ["10","10","10"] },
+        { name: "Pushups", sets: ["10","10","10"] },
+        { name: "Smith Weighted Pushups", sets: ["20","20","20"] },
+        { name: "Smith Close-Grip Press (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Squat Press Shoulder Press (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Single-Arm Landmine Press", sets: ["20","20","20"] },
+        { name: "Single-Arm Bentover Rear Delt Raise", sets: ["10-12","10-12","10-12"] },
+        { name: "Leg Extension Single-Arm Rear Delt Raise", sets: ["10-12","10-12","10-12"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+    },
+
+    "3": {
+      title: "Arms",
+      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
+      workout: [
+        { name: "Kneeling Cable Overhead Triceps Extension (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Machine Triceps Extension (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Machine Triceps Pressdown (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Standing Cable Curls", sets: ["10","10","10"] },
+        { name: "Lying Cable Curls", sets: ["10","10","10"] },
+        { name: "Lying High Cable Curls", sets: ["10","10","10"] },
+        { name: "Standing High Cable Curls", sets: ["10","10","10"] },
+        { name: "Reverse-Grip EZ-Bar Curls", sets: ["10","10","10"] },
+        { name: "Close-Grip EZ-Bar Curls", sets: ["10","10","10"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+    },
+
+    "4": {
+      title: "Hamstrings, Lower Back & Upper Abs",
+      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
+      workout: [
+        { name: "Single-Leg Hamstring Curl", sets: ["12","10","8","8","6"] },
+        { name: "DB Stiff-Leg Deadlift", sets: ["10","10","10","10","10"] },
+        { name: "Weighted Hyperextensions (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Barbell Good Mornings (20,18,16)", sets: ["20","18","16"] },
+        { name: "Weighted Crunches", sets: ["20","20","20"] },
+        { name: "Cross-Body Crunches", sets: ["20","20","20"] },
+        { name: "Exercise Ball Rollouts", sets: ["20","20","20"] },
+        { name: "Ab Twists", sets: ["50","50","50"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+    },
+
+    "5": {
+      title: "Upper Back & Calves",
+      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
+      workout: [
+        { name: "DB Seal Row (10/10)", sets: ["10/10","10/10","10/10"] },
+        { name: "Incline Straight-Arm Pullover", sets: ["12","12","12"] },
+        { name: "Barbell Bentover Row", sets: ["10","10","10"] },
+        { name: "Seated EZ-Bar Shrugs", sets: ["20","20","20"] },
+        { name: "Calf Press", sets: ["20","20","20","20","20"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+    },
+
+    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
+    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
+
+  }
+
+,
+  "4": {
+
+    "1": {
+      title: "Legs, Calves & Lower Abs",
+      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
+      workout: [
+        { name: "Leg Press (Giant Set Style)", sets: ["25","20","15","15","10"] },
+        { name: "Smith Squats", sets: ["20","20","20"] },
+        { name: "Walking Lunges", sets: ["20","20","20"] },
+        { name: "Seated Calf Raise", sets: ["30","30","30","30","30"] },
+        { name: "Hanging Leg Raises", sets: ["Failure","Failure","Failure"] },
+        { name: "Decline Situps", sets: ["Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+    },
+
+    "2": {
+      title: "Chest & Shoulders",
+      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
+      workout: [
+        { name: "Incline DB Press", sets: ["15","12","10","10"] },
+        { name: "Flat DB Fly", sets: ["15","12","10"] },
+        { name: "Weighted Pushups", sets: ["Failure","Failure","Failure"] },
+        { name: "Barbell Shoulder Press", sets: ["15","12","10","10"] },
+        { name: "Side Raises (Superset)", sets: ["15","15","15"] },
+        { name: "Rear Delt Fly", sets: ["15","15","15"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+    },
+
+    "3": {
+      title: "Arms (Superset Focus)",
+      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
+      workout: [
+        { name: "Close Grip Bench Press", sets: ["12","10","10"] },
+        { name: "EZ Bar Curl", sets: ["12","10","10"] },
+        { name: "Overhead Extension", sets: ["12","12","12"] },
+        { name: "Hammer Curl", sets: ["12","12","12"] },
+        { name: "Cable Pushdown", sets: ["15","15","15"] },
+        { name: "Cable Curl", sets: ["15","15","15"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+    },
+
+    "4": {
+      title: "Lower Back, Hamstrings & Upper Abs",
+      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
+      workout: [
+        { name: "Romanian Deadlift", sets: ["15","12","10","10"] },
+        { name: "Seated Ham Curl", sets: ["15","12","10"] },
+        { name: "Hyperextensions", sets: ["15","15","15"] },
+        { name: "Cable Crunch", sets: ["20","20","20"] },
+        { name: "Ab Rollouts", sets: ["15","15","15"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+    },
+
+    "5": {
+      title: "Upper Back & Calves",
+      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
+      workout: [
+        { name: "Pull-ups", sets: ["Failure","Failure","Failure"] },
+        { name: "Barbell Row", sets: ["12","10","10"] },
+        { name: "Lat Pulldown", sets: ["12","12","12"] },
+        { name: "Barbell Shrugs", sets: ["20","20","20"] },
+        { name: "Standing Calf Press", sets: ["25","25","25","25","25"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+    },
+
+    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
+    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
+
+  }
+
+,
+  "5": {
+
+    "1": {
+      title: "Quads, Calves & Lower Abs (DTPXtreme)",
+      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
+      workout: [
+        { name: "Leg Extensions DTPXtreme", sets: ["30","20","10","10","20","30"] },
+        { name: "Hack Squats (Narrow Stance)", sets: ["30","25","20"] },
+        { name: "Reverse Hack Squats (Narrow Stance)", sets: ["20","25","30"] },
+        { name: "Leg Press DTPXtreme", sets: ["30","20","10","10","20","30"] },
+        { name: "Seated Calf Raises DTPXtreme", sets: ["30","20","10","10","20","30"] },
+        { name: "Hanging Windshield Wipers", sets: ["Failure","Failure","Failure","Failure","Failure"] },
+        { name: "Lying Windshield Wipers", sets: ["Failure","Failure","Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+    },
+
+    "2": {
+      title: "Chest & Shoulders (DTPXtreme)",
+      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
+      workout: [
+        { name: "Incline Dumbbell Press", sets: ["30","20","10","10","20","30"] },
+        { name: "Decline Dumbbell Press", sets: ["30","20","10","10","20","30"] },
+        { name: "Flat Chest Press Machine", sets: ["30","20","10","10","20","30"] },
+        { name: "Front Plate Raises", sets: ["30","20","10","10","20","30"] },
+        { name: "Bent-Over Reverse Plate Flyes", sets: ["30","20","10","10","20","30"] },
+        { name: "Side Lateral Plate Raises", sets: ["30","20","10","10","20","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+    },
+
+    "3": {
+      title: "Arms (DTPXtreme Supersets)",
+      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
+      workout: [
+        { name: "Triceps Extensions", sets: ["30","25","20","20","25","30"] },
+        { name: "Dumbbell Biceps Curl", sets: ["20","15","10","10","15","20"] },
+        { name: "EZ Bar Skull Crushers", sets: ["30","25","20","20","25","30"] },
+        { name: "Cable EZ Bar Preacher Curls", sets: ["20","15","10","10","15","20"] },
+        { name: "Dips", sets: ["30","25","20","20","25","30"] },
+        { name: "Hammer Curls", sets: ["20","15","10","10","15","20"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+    },
+
+    "4": {
+      title: "Lower Back, Hamstrings & Upper Abs (DTPXtreme)",
+      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
+      workout: [
+        { name: "Deadlifts", sets: ["15","10","5","5","10","15"] },
+        { name: "Lying Leg Curls", sets: ["30","20","10","10","20","30"] },
+        { name: "Seated Leg Curls", sets: ["30","20","10","10","20","30"] },
+        { name: "Standing Cable Crunches", sets: ["30","30","30","30","30"] },
+        { name: "Exercise Ball Alternating Crunches", sets: ["30","30","30","30","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+    },
+
+    "5": {
+      title: "Upper Back & Calves (DTPXtreme)",
+      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
+      workout: [
+        { name: "Pull-ups", sets: ["20","15","10","10","15","20"] },
+        { name: "T-Bar Rows", sets: ["20","15","10","10","15","20"] },
+        { name: "Seated Machine Row", sets: ["20","15","10","10","15","20"] },
+        { name: "Machine Shrugs", sets: ["30","20","10","10","20","30"] },
+        { name: "Calf Raise Machine", sets: ["30","20","10","10","20","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+    },
+
+    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
+    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
+
+  }
+
+,
+  "6": {
+
+    "1": {
+      title: "Quads & Calves",
+      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
+      workout: [
+        { name: "Leg Extensions", sets: ["20","15","10"] },
+        { name: "Squats", sets: ["20","25","30"] },
+        { name: "Leg Press", sets: ["20","15","10"] },
+        { name: "Hack Squats", sets: ["20","15","10"] },
+        { name: "Seated Calf Raises", sets: ["30","25","20","10","15","20"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+    },
+
+    "2": {
+      title: "Chest & Shoulders",
+      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
+      workout: [
+        { name: "Flat Dumbbell Press", sets: ["30","20","10"] },
+        { name: "Incline Dumbbell Flyes", sets: ["10","15","20"] },
+        { name: "Decline Smith Machine Press", sets: ["30","20","10"] },
+        { name: "Cable Crossover", sets: ["10","15","20","30"] },
+        { name: "Incline Front Barbell Raises", sets: ["30","20","10"] },
+        { name: "Incline Front Dumbbell Raises", sets: ["10","15","20"] },
+        { name: "Incline Rear Delt Flyes", sets: ["30","20","10"] },
+        { name: "Incline Bench Rear Dumbbell Flyes", sets: ["10","15","20"] },
+        { name: "Dumbbell Lateral Raise", sets: ["30","20","10"] },
+        { name: "Seated Side Lateral Dumbbell Raises", sets: ["10","15","20"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+    },
+
+    "3": {
+      title: "Arms",
+      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
+      workout: [
+        { name: "Machine Preacher Curls", sets: ["30","20","10"] },
+        { name: "Rope Pressdown", sets: ["10","15","20"] },
+        { name: "Reverse-Grip Triceps Extensions", sets: ["30","20","10"] },
+        { name: "Reverse-Grip Cable Biceps Curl", sets: ["20","25","30"] },
+        { name: "Smith Machine Drag Curl", sets: ["30","20","10"] },
+        { name: "Smith Machine Close-Grip Bench Press", sets: ["20","25","30"] },
+        { name: "Incline Overhead Dumbbell Extensions", sets: ["30","20","10"] },
+        { name: "Spider Curls", sets: ["20","25","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+    },
+
+    "4": {
+      title: "Lower Back, Hamstrings & Upper Abs",
+      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
+      workout: [
+        { name: "Glute-Ham Raise", sets: ["30","20","10"] },
+        { name: "Seated Leg Curls", sets: ["20","25","30"] },
+        { name: "Lying Cable Hamstring Curl", sets: ["30","20","10"] },
+        { name: "Reverse Hack Squat", sets: ["20","25","30"] },
+        { name: "Hyperextensions", sets: ["30","20","10"] },
+        { name: "Dumbbell Deadlifts", sets: ["20","25","30"] },
+        { name: "Exercise Ball Cable Crunches", sets: ["Failure"] },
+        { name: "Ab Wheel Rollouts", sets: ["Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+    },
+
+    "5": {
+      title: "Upper Back & Calves",
+      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
+      workout: [
+        { name: "Machine Pullover", sets: ["30","20","10"] },
+        { name: "Straight-Arm Dumbbell Pullover", sets: ["20","25","30"] },
+        { name: "Straight-Arm Pulldown", sets: ["30","20","10"] },
+        { name: "Lat Pulldown", sets: ["20","25","30"] },
+        { name: "Machine Shrugs", sets: ["30","20","10","20","25","30"] },
+        { name: "Standing Calf Raise", sets: ["30","20","10"] },
+        { name: "Donkey Calf Raises", sets: ["20","25","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+    },
+
+    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
+    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
+
+  }
+
+,
+  "7": {
+
+    "1": {
+      title: "Quads, Calves & Lower Abs (Superset Phase)",
+      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
+      workout: [
+        { name: "Leg Extensions", sets: ["20","15","10"] },
+        { name: "Seated Leg Press", sets: ["20","15","10"] },
+        { name: "Hack Squat", sets: ["20","15","10"] },
+        { name: "Barbell Squat", sets: ["20","15","10"] },
+        { name: "Seated Calf Raises", sets: ["20","25","30"] },
+        { name: "Flat Bench Lying Leg Raise", sets: ["Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+    },
+
+    "2": {
+      title: "Chest & Shoulders (Superset Phase)",
+      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
+      workout: [
+        { name: "Incline Dumbbell Press", sets: ["20","15","10"] },
+        { name: "Flat Dumbbell Press", sets: ["20","15","10"] },
+        { name: "Cable Crossover", sets: ["20","15","10"] },
+        { name: "Smith Machine Press", sets: ["20","15","10"] },
+        { name: "Front Raises", sets: ["20","15","10"] },
+        { name: "Side Lateral Raises", sets: ["20","15","10"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+    },
+
+    "3": {
+      title: "Arms (Superset Focus)",
+      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
+      workout: [
+        { name: "EZ Bar Curl", sets: ["20","15","10"] },
+        { name: "Rope Pushdown", sets: ["20","15","10"] },
+        { name: "Preacher Curl", sets: ["20","15","10"] },
+        { name: "Overhead Extension", sets: ["20","15","10"] },
+        { name: "Hammer Curl", sets: ["20","15","10"] },
+        { name: "Dips", sets: ["Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+    },
+
+    "4": {
+      title: "Lower Back, Hamstrings & Upper Abs",
+      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
+      workout: [
+        { name: "Romanian Deadlift", sets: ["20","15","10"] },
+        { name: "Lying Leg Curl", sets: ["20","15","10"] },
+        { name: "Seated Leg Curl", sets: ["20","15","10"] },
+        { name: "Cable Crunch", sets: ["25","25","25"] },
+        { name: "Ab Rollouts", sets: ["Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+    },
+
+    "5": {
+      title: "Upper Back & Calves",
+      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
+      workout: [
+        { name: "Pull-ups", sets: ["20","15","10"] },
+        { name: "Barbell Rows", sets: ["20","15","10"] },
+        { name: "Lat Pulldown", sets: ["20","15","10"] },
+        { name: "Machine Shrugs", sets: ["20","25","30"] },
+        { name: "Standing Calf Raise", sets: ["20","25","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+    },
+
+    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
+    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
+
+  }
+
+,
+  "8": {
+
+    "1": {
+      title: "Quads, Calves & Lower Abs (Final Phase)",
+      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
+      workout: [
+        { name: "Leg Extensions", sets: ["30","20","10","10","20","30"] },
+        { name: "Sissy Squats", sets: ["Failure","Failure","Failure"] },
+        { name: "Leg Press", sets: ["30","20","10","10","20","30"] },
+        { name: "Seated Calf Raise", sets: ["30","20","10","10","20","30"] },
+        { name: "Hanging Leg Raises", sets: ["Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+    },
+
+    "2": {
+      title: "Chest & Shoulders (Final Phase)",
+      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
+      workout: [
+        { name: "Incline Dumbbell Press", sets: ["30","20","10","10","20","30"] },
+        { name: "Flat Dumbbell Fly", sets: ["30","20","10","10","20","30"] },
+        { name: "Cable Crossover", sets: ["30","20","10","10","20","30"] },
+        { name: "Barbell Shoulder Press", sets: ["30","20","10","10","20","30"] },
+        { name: "Side Lateral Raise", sets: ["30","20","10","10","20","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+    },
+
+    "3": {
+      title: "Arms (Final Phase)",
+      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
+      workout: [
+        { name: "EZ Bar Curl", sets: ["30","20","10","10","20","30"] },
+        { name: "Cable Pushdown", sets: ["30","20","10","10","20","30"] },
+        { name: "Preacher Curl", sets: ["30","20","10","10","20","30"] },
+        { name: "Overhead Triceps Extension", sets: ["30","20","10","10","20","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+    },
+
+    "4": {
+      title: "Lower Back, Hamstrings & Upper Abs (Final Phase)",
+      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
+      workout: [
+        { name: "Romanian Deadlift", sets: ["30","20","10","10","20","30"] },
+        { name: "Lying Leg Curl", sets: ["30","20","10","10","20","30"] },
+        { name: "Hyperextensions", sets: ["30","20","10"] },
+        { name: "Cable Crunch", sets: ["Failure","Failure","Failure"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+    },
+
+    "5": {
+      title: "Upper Back & Calves (Final Phase)",
+      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
+      workout: [
+        { name: "Pull-ups", sets: ["Failure","Failure","Failure"] },
+        { name: "Barbell Rows", sets: ["30","20","10","10","20","30"] },
+        { name: "Lat Pulldown", sets: ["30","20","10","10","20","30"] },
+        { name: "Standing Calf Raise", sets: ["30","20","10","10","20","30"] }
+      ],
+      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+    },
+
+    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
+    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
+
+  }
+
+};
+
+
+function safe(s){return String(s).replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function svgIcon(name){
+  const common='fill="none" stroke="rgba(255,255,255,.85)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"';
+  const bg='<rect x="3" y="3" width="122" height="122" rx="20" ry="20" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.10)" />';
+  const treadmill=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M26 90h66" /><path ${common} d="M30 90l10-42h26l10 26h18" /><circle cx="34" cy="96" r="6" fill="rgba(255,255,255,.75)" /><circle cx="92" cy="96" r="6" fill="rgba(255,255,255,.75)" /></svg>`;
+  const twist=`<svg viewBox="0 0 128 128">${bg}<circle cx="78" cy="36" r="8" fill="rgba(255,255,255,.75)" /><path ${common} d="M40 82c10-10 38-10 48 0" /></svg>`;
+  const pullup=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M28 34h72" /><path ${common} d="M32 34v60" /><path ${common} d="M96 34v60" /></svg>`;
+  const row=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M30 92h68" /><path ${common} d="M38 92l10-44h32l10 44" /></svg>`;
+  const shoulder=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M34 98h60" /><path ${common} d="M48 98V60h32v38" /></svg>`;
+  const delt=`<svg viewBox="0 0 128 128">${bg}<circle cx="64" cy="40" r="8" fill="rgba(255,255,255,.75)" /><path ${common} d="M44 60l-12 10" /><path ${common} d="M84 60l12 10" /></svg>`;
+  const shrug=`<svg viewBox="0 0 128 128">${bg}<circle cx="64" cy="38" r="8" fill="rgba(255,255,255,.75)" /><path ${common} d="M44 60c4 6 10 10 20 10s16-4 20-10" /></svg>`;
+  const triceps=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M44 30h40" /><path ${common} d="M64 30v54" /></svg>`;
+  const chest=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M28 88h72" /><path ${common} d="M40 88l12-36h24l12 36" /></svg>`;
+  const hack=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M34 100h66" /><path ${common} d="M40 98l12-58h40l-12 58" /></svg>`;
+  const curl=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M34 96h60" /><path ${common} d="M40 94V54h20" /></svg>`;
+  const calf=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M40 96h48" /><path ${common} d="M52 92c0-20 12-24 24-40" /></svg>`;
+  const abs=`<svg viewBox="0 0 128 128">${bg}<path ${common} d="M46 30h36" /><path ${common} d="M46 30l-8 28c-4 16 6 40 26 40s30-24 26-40l-8-28" /></svg>`;
+  const n=name.toLowerCase();
+  if(n.includes("cardio")) return treadmill;
+  if(n.includes("twist")) return twist;
+  if(n.includes("pull")) return pullup;
+  if(n.includes("row")||n.includes("pulldown")) return row;
+  if(n.includes("press") && (n.includes("should")||n.includes("military"))) return shoulder;
+  if(n.includes("pec")||n.includes("lateral")||n.includes("rear delt")||n.includes("cross")) return delt;
+  if(n.includes("shrug")) return shrug;
+  if(n.includes("tricep")||n.includes("pressdown")||n.includes("rope")||n.includes("overhead")) return triceps;
+  if(n.includes("chest")||n.includes("bench")||n.includes("incline")) return chest;
+  if(n.includes("hack")||n.includes("leg")) return hack;
+  if(n.includes("curl")) return curl;
+  if(n.includes("calf")) return calf;
+  if(n.includes("sit")||n.includes("raise")||n.includes("ab")) return abs;
+  return treadmill;
+}
+
+
+/* ===============================
+   Jalandhar Fitness Club Storage
+   =============================== */
+
+const STORAGE_KEY = "JFC_STRENGTH_WEEK1_V2";
+const BACKUP_KEY  = "JFC_STRENGTH_WEEK1_BACKUP_V2";
+
+function loadState() {
+  try {
+    let data = localStorage.getItem(STORAGE_KEY);
+    if (!data) {
+      data = localStorage.getItem(BACKUP_KEY);
+    }
+    if (!data) {
+      return { week: 1, day: 1, checks: {} };
+    }
+    return JSON.parse(data);
+  } catch (err) {
+    return { week: 1, day: 1, checks: {} };
+  }
+}
+
+let state = loadState();
+
+function saveState() {
+  try {
+    const json = JSON.stringify(state);
+    localStorage.setItem(STORAGE_KEY, json);
+    localStorage.setItem(BACKUP_KEY, json);
+  } catch (err) {
+    console.log("Storage failed.");
+  }
+}
+
+
+const content=document.getElementById("content");
+const metaWeek=document.getElementById("metaWeek");
+const metaDay=document.getElementById("metaDay");
+const metaTitle=document.getElementById("metaTitle");
+const panelTitle=document.getElementById("panelTitle");
+const panelSub=document.getElementById("panelSub");
+const barFill=document.getElementById("barFill");
+const progressPct=document.getElementById("progressPct");
+const progressDone=document.getElementById("progressDone");
+const progressTotal=document.getElementById("progressTotal");
+const weekSelect=document.getElementById("weekSelect");
+const daySelect=document.getElementById("daySelect");
+
+function keyFor(week,day,name,idx){return `w${week}|d${day}|${name}|${idx}`;}
+
+function chipHTML(week,day,name,i,label){
+  const k=keyFor(week,day,name,i);
+  const checked=!!state.checks[k];
+  return `<div class="chip ${checked?"checked":""}" data-key="${k}"><span class="dot"></span><span>${safe(label)}</span></div>`;
+}
+function card(week,day,item){
+  const chips=(item.sets||[]).map((s,i)=>chipHTML(week,day,item.name,i,`Set ${i+1}: ${s}`)).join("");
+  return `<div class="card"><div class="cardInner"><div class="thumb">${svgIcon(item.name)}<div class="shine"></div></div><div class="info"><p class="name">${safe(item.name)}</p><p class="detail">${safe((item.sets||[]).join(" • "))}</p><div class="sets">${chips}</div></div></div></div>`;
+}
+function section(week,day,title,items,hint){
+  return `<div class="sectionTitle"><span>${title}</span><small>${hint||""}</small></div>` + items.map(it=>card(week,day,it)).join("");
+}
+function allKeysForDay(week,day,plan){
+  const keys=[];
+  [plan.morning,plan.workout,plan.finish].flat().forEach(item=> (item.sets||[]).forEach((_,i)=>keys.push(keyFor(week,day,item.name,i)) ));
+  return keys;
+}
+function renderProgress(plan){
+  const keys=allKeysForDay(state.week,state.day,plan);
+  const done=keys.filter(k=>!!state.checks[k]).length;
+  const total=keys.length;
+  const pct=Math.round((done/(total||1))*100);
+  barFill.style.width=pct+"%";
+  progressPct.textContent=pct+"%";
+  progressDone.textContent=done;
+  progressTotal.textContent=total;
+}
+
+function renderPlan(){
+  const week=String(state.week), day=String(state.day);
+  const plan = (SPLIT[week]||{})[day];
+  if(!plan){
+    metaWeek.querySelector("span:last-child").textContent=`Week ${state.week}`;
+    metaDay.querySelector("span:last-child").textContent=`Day ${state.day}`;
+    metaTitle.querySelector("span:last-child").textContent="—";
+    panelTitle.textContent=`Week ${state.week} • Day ${state.day}`;
+    panelSub.textContent="This day is missing workout data.";
+    content.innerHTML = `<div class="empty">No workout data found for Week ${state.week} Day ${state.day}.</div>`;
+    barFill.style.width="0%"; progressPct.textContent="0%"; progressDone.textContent="0"; progressTotal.textContent="0";
+    return;
+  }
+  metaWeek.querySelector("span:last-child").textContent=`Week ${state.week}`;
+  metaDay.querySelector("span:last-child").textContent=`Day ${state.day}`;
+  metaTitle.querySelector("span:last-child").textContent=plan.title;
+  panelTitle.textContent=`Week ${state.week} • Day ${state.day}`;
+  panelSub.textContent=`Plan: ${plan.title}. Tap sets to check them off.`;
+
+  const morning=plan.morning||[];
+  const workout=plan.workout||[];
+  const finish=plan.finish||[];
+
+  let out="";
+  if(morning.length) out += section(state.week,state.day,"Morning",morning,"start smooth");
+  out += workout.length ? section(state.week,state.day,"Workout",workout,"push hard") : (`<div class="sectionTitle"><span>Workout</span><small>rest</small></div><div class="empty">No weights today — active rest.</div>`);
+  if(finish.length) out += section(state.week,state.day,"Finish",finish,"clean close");
+  content.innerHTML=out;
+
+  content.onclick=(e)=>{
+    const chip=e.target.closest(".chip"); if(!chip) return;
+    const k=chip.getAttribute("data-key");
+    state.checks[k]=!state.checks[k];
+    chip.classList.toggle("checked", !!state.checks[k]);
+    saveState();
+    renderProgress(plan);
+  };
+  renderProgress(plan);
+}
+
+state.week = 1;
+weekSelect.value = "1";
+daySelect.value = String(state.day);
+weekSelect.addEventListener("change", ()=>{ state.week = Number(weekSelect.value); saveState(); renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
+daySelect.addEventListener("change", ()=>{ state.day = Number(daySelect.value); saveState(); renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
+
+document.getElementById("resetBtn").addEventListener("click",()=>{
+  const plan = (SPLIT[String(state.week)]||{})[String(state.day)];
+  if(!plan) return;
+  allKeysForDay(state.week,state.day,plan).forEach(k=>delete state.checks[k]);
+  saveState();
+  document.querySelectorAll(".chip.checked").forEach(el=>el.classList.remove("checked"));
+  renderProgress(plan);
+});
+document.getElementById("markAllBtn").addEventListener("click",()=>{
+  const plan = (SPLIT[String(state.week)]||{})[String(state.day)];
+  if(!plan) return;
+  allKeysForDay(state.week,state.day,plan).forEach(k=>state.checks[k]=true);
+  saveState();
+  document.querySelectorAll(".chip").forEach(el=>el.classList.add("checked"));
+  renderProgress(plan);
+});
+
+renderPlan();
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+// ── THIS PAGE'S PROGRAM ID ──────────────────────────────────────
+// Must match exactly what you put in Column B of your Google Sheet
+const THIS_PROGRAM = 'strength';
+// ────────────────────────────────────────────────────────────────
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCTQDlsZNhZ-I6CvlNgZDPgpJJYlYto6Rk",
+  authDomain: "jalandhar-fitness-club.firebaseapp.com",
+  projectId: "jalandhar-fitness-club",
+  storageBucket: "jalandhar-fitness-club.firebasestorage.app",
+  messagingSenderId: "899365845803",
+  appId: "1:899365845803:web:a75a331462df8b017f236e"
+};
+
+initializeApp(firebaseConfig);
+const auth = getAuth();
+
+async function getMemberData(email) {
+  try {
+    const res  = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQDk6mlT8US0aTZU2iWh6dYX0e4HbGrpmYYdNYEtAzAUeUw0oyAXsZlWr6Ip_Na3jhOHRcUVBELgKgv/pub?output=csv");
+    const text = await res.text();
+    const rows = text.split("\n").map(r => r.trim()).filter(r => r && !r.toLowerCase().startsWith("email"));
+    for (let row of rows) {
+      const cols = row.split(",");
+      if ((cols[0]||"").trim().toLowerCase() === email.toLowerCase()) {
+        return {
+          program:  (cols[1]||"").trim().toLowerCase(),
+          expiry:   (cols[2]||"").trim(),
+          approved: ['yes','true'].includes((cols[3]||"").trim().toLowerCase()),
+          revoked:  ['yes','true'].includes((cols[4]||"").trim().toLowerCase()),
+        };
+      }
+    }
+  } catch(e) {}
+  return null;
+}
+
+function showAccessDenied(reason) {
+  const overlay = document.createElement('div');
+  overlay.style.cssText = `
+    position:fixed;inset:0;background:#000;z-index:99999;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:32px;font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  `;
+  overlay.innerHTML = `
+    <div style="width:64px;height:64px;border-radius:50%;border:1.5px solid rgba(224,85,85,0.5);background:rgba(224,85,85,0.07);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px">✕</div>
+    <div style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;letter-spacing:1px;color:#fff;margin-bottom:10px">Access Denied</div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.4);max-width:280px;line-height:1.7;margin-bottom:28px">${reason}</div>
+    <button onclick="window.location.href='dashboard.html'" style="padding:13px 28px;border-radius:11px;border:none;background:#fff;color:#000;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;margin-bottom:10px">Go to Dashboard</button>
+    <button onclick="window.location.href='programs.html'" style="padding:12px 28px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);background:transparent;color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:color 0.2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Browse Programs</button>
+  `;
+  document.body.appendChild(overlay);
+}
+
+onAuthStateChanged(auth, async (user) => {
+  // 1. Not logged in → login page
+  if (!user) { window.location.href = "login.html"; return; }
+
+  const data = await getMemberData(user.email);
+
+  // 2. Not in sheet → dashboard
+  if (!data) { window.location.href = "dashboard.html"; return; }
+
+  // 3. Not approved yet
+  if (!data.approved) { window.location.href = "dashboard.html"; return; }
+
+  // 4. Revoked
+  if (data.revoked) { showAccessDenied("Your access has been revoked. Please contact us or purchase a new program."); return; }
+
+  // 5. Expired
+  if (data.expiry && new Date() > new Date(data.expiry)) {
+    showAccessDenied("Your program access has expired. Purchase a new program to continue training.");
+    return;
+  }
+
+  // 6. Wrong program — redirect to the one they actually paid for
+  if (data.program !== THIS_PROGRAM) {
+    if (data.program) {
+      const routes = { shred:'shred.html', strength:'strength.html', bikini:'bikini.html', p4:'p4.html', p5:'p5.html', p6:'p6.html', p7:'p7.html', p8:'p8.html', p9:'p9.html', p10:'p10.html' };
+      const correctFile = routes[data.program];
+      if (correctFile) { window.location.href = correctFile; return; }
+    }
+    showAccessDenied("You don't have access to this program. Check your dashboard to see what you've purchased.");
+    return;
+  }
+
+  // ✅ All checks passed — they have access to THIS program
+});
+</script>
+</body>
+</html>

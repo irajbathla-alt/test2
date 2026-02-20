@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Created — Jalandhar Fitness Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:#000;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;align-items:center;min-height:100vh;}
+:root{--b:rgba(255,255,255,0.09);--s:#0d0d0d;--s2:#161616;--m:rgba(255,255,255,0.3)}
+.card{width:90%;max-width:420px;text-align:center;background:var(--s);border:1px solid var(--b);border-radius:20px;padding:44px 28px;box-shadow:0 40px 100px rgba(0,0,0,0.8);animation:up 0.55s cubic-bezier(0.16,1,0.3,1) both}
+@keyframes up{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:none}}
+/* Clock ring */
+.ring{width:72px;height:72px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 22px;animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0.12)}50%{box-shadow:0 0 0 14px rgba(255,255,255,0)}}
+.logo{font-family:'Cinzel',serif;font-size:13px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:20px}
+.title{font-family:'Cinzel',serif;font-size:21px;font-weight:700;letter-spacing:1px;margin-bottom:11px}
+.desc{font-size:13px;color:var(--m);line-height:1.8;margin-bottom:26px}
+.desc strong{color:rgba(255,255,255,0.7)}
+/* Email box */
+.email-box{background:var(--s2);border:1px solid var(--b);border-radius:11px;padding:12px 16px;margin-bottom:24px;text-align:left}
+.email-lbl{font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--m);display:block;margin-bottom:3px}
+.email-val{font-size:14px;color:#fff;font-weight:500}
+/* Approved banner */
+#approved{display:none;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.15);border-radius:11px;padding:13px 15px;margin-bottom:16px;font-size:13px;color:rgba(255,255,255,0.7)}
+/* Steps */
+.steps-lbl{font-size:10px;color:var(--m);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:13px}
+.steps{display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.step{display:flex;align-items:center;gap:11px;background:var(--s2);border:1px solid var(--b);border-radius:10px;padding:11px 13px;text-align:left}
+.sn{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+.sn.done{background:#fff;color:#000}
+.sn.wait{background:rgba(255,255,255,0.06);border:1px solid var(--b);color:var(--m)}
+.st{font-size:12px;color:var(--m);line-height:1.45}
+.st strong{color:rgba(255,255,255,0.75);display:block;margin-bottom:1px}
+/* Buttons */
+.btn-w{width:100%;padding:14px;border-radius:11px;border:none;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1.5px;cursor:pointer;background:#fff;color:#000;margin-bottom:10px;transition:all 0.2s;display:none}
+.btn-w:hover{background:rgba(255,255,255,0.88);transform:translateY(-1px)}
+.btn-ghost{width:100%;padding:12px;border-radius:11px;border:1px solid var(--b);background:transparent;color:var(--m);font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.2);color:#fff}
+.note{margin-top:14px;font-size:11px;color:rgba(255,255,255,0.18)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">Jalandhar Fitness Club</div>
+  <div class="ring">⏳</div>
+  <div class="title">Account Created!</div>
+  <div class="desc">Your account is registered.<br><strong>Activation takes up to 24 hours.</strong><br>Once approved you can browse and purchase programs.</div>
+  <div class="email-box">
+    <span class="email-lbl">Registered Email</span>
+    <span class="email-val" id="email-display">—</span>
+  </div>
+  <div id="approved">✓ Your account is approved — you can now browse programs.</div>
+  <button class="btn-w" id="go-btn" onclick="window.location.href='programs.html'">Browse Programs</button>
+  <div class="steps-lbl">What happens next</div>
+  <div class="steps">
+    <div class="step"><div class="sn done">✓</div><div class="st"><strong>Account created</strong>You're registered in our system</div></div>
+    <div class="step"><div class="sn wait">2</div><div class="st"><strong>Pending approval</strong>We'll activate within 24 hours</div></div>
+    <div class="step"><div class="sn wait">3</div><div class="st"><strong>Choose a program</strong>Browse 10+ programs and purchase access</div></div>
+    <div class="step"><div class="sn wait">4</div><div class="st"><strong>Start training</strong>Full access to your program immediately</div></div>
+  </div>
+  <button class="btn-ghost" onclick="signOut()">Sign Out</button>
+  <div class="note">Questions? Contact us — we're here to help.</div>
+</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut as fbOut }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+const app=initializeApp({apiKey:"AIzaSyCTQDlsZNhZ-I6CvlNgZDPgpJJYlYto6Rk",authDomain:"jalandhar-fitness-club.firebaseapp.com",projectId:"jalandhar-fitness-club",storageBucket:"jalandhar-fitness-club.firebasestorage.app",messagingSenderId:"899365845803",appId:"1:899365845803:web:a75a331462df8b017f236e"});
+const auth=getAuth(app);
+const se=sessionStorage.getItem('newEmail');
+if(se)document.getElementById('email-display').textContent=se;
+window.signOut=()=>fbOut(auth).then(()=>window.location.href='login.html');
+async function check(email){
+  try{
+    const r=await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQDk6mlT8US0aTZU2iWh6dYX0e4HbGrpmYYdNYEtAzAUeUw0oyAXsZlWr6Ip_Na3jhOHRcUVBELgKgv/pub?output=csv");
+    const t=await r.text();
+    const rows=t.split("\n").map(r=>r.trim()).filter(r=>r&&!r.toLowerCase().startsWith("email"));
+    for(let row of rows){const p=row.split(",");if((p[0]||"").trim().toLowerCase()===email.toLowerCase())return['yes','true'].includes((p[3]||"").trim().toLowerCase())}
+  }catch(e){}
+  return false;
+}
+onAuthStateChanged(auth,async user=>{
+  if(!user){window.location.href='login.html';return}
+  document.getElementById('email-display').textContent=user.email;
+  if(await check(user.email)){
+    document.getElementById('approved').style.display='block';
+    document.getElementById('go-btn').style.display='block';
+  }
+});
+</script>
+</body>
+</html>

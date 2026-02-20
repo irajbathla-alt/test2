@@ -274,7 +274,7 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 const auth=getAuth(initializeApp({apiKey:"AIzaSyCTQDlsZNhZ-I6CvlNgZDPgpJJYlYto6Rk",authDomain:"jalandhar-fitness-club.firebaseapp.com",projectId:"jalandhar-fitness-club",storageBucket:"jalandhar-fitness-club.firebasestorage.app",messagingSenderId:"899365845803",appId:"1:899365845803:web:a75a331462df8b017f236e"}));
 async function isApproved(email){
   try{
-    const t=await(await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQDk6mlT8US0aTZU2iWh6dYX0e4HbGrpmYYdNYEtAzAUeUw0oyAXsZlWr6Ip_Na3jhOHRcUVBELgKgv/pub?output=csv")).text();
+    const t=await(await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRCqo3ulVGf4U41yNtpBOrSESFfOBsi7M4WRHUDzqyU_poz9QPGEUhCN7xvJKzevmtIrnKxrEM-Qy1h/pub?output=csv")).text();
     for(let row of t.split("\n").map(r=>r.trim()).filter(r=>r&&!r.toLowerCase().startsWith("email"))){
       const p=row.split(",");
       if((p[0]||"").trim().toLowerCase()===email.toLowerCase())return['yes','true'].includes((p[3]||"").trim().toLowerCase());

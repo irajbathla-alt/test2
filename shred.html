@@ -320,7 +320,7 @@ const auth = getAuth();
 
 async function getMemberData(email) {
   try {
-    const res  = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQDk6mlT8US0aTZU2iWh6dYX0e4HbGrpmYYdNYEtAzAUeUw0oyAXsZlWr6Ip_Na3jhOHRcUVBELgKgv/pub?output=csv");
+    const res  = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRCqo3ulVGf4U41yNtpBOrSESFfOBsi7M4WRHUDzqyU_poz9QPGEUhCN7xvJKzevmtIrnKxrEM-Qy1h/pub?output=csv");
     const text = await res.text();
     const rows = text.split("\n").map(r => r.trim()).filter(r => r && !r.toLowerCase().startsWith("email"));
     for (let row of rows) {

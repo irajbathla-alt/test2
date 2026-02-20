@@ -75,7 +75,7 @@ if(se)document.getElementById('email-display').textContent=se;
 window.signOut=()=>fbOut(auth).then(()=>window.location.href='login.html');
 async function check(email){
   try{
-    const r=await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQDk6mlT8US0aTZU2iWh6dYX0e4HbGrpmYYdNYEtAzAUeUw0oyAXsZlWr6Ip_Na3jhOHRcUVBELgKgv/pub?output=csv");
+    const r=await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRCqo3ulVGf4U41yNtpBOrSESFfOBsi7M4WRHUDzqyU_poz9QPGEUhCN7xvJKzevmtIrnKxrEM-Qy1h/pub?output=csv");
     const t=await r.text();
     const rows=t.split("\n").map(r=>r.trim()).filter(r=>r&&!r.toLowerCase().startsWith("email"));
     for(let row of rows){const p=row.split(",");if((p[0]||"").trim().toLowerCase()===email.toLowerCase())return['yes','true'].includes((p[3]||"").trim().toLowerCase())}

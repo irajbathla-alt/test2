@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,8 +102,9 @@ input:focus {
     margin-top: 20px;
     font-size: 13px;
     text-align: center;
-    min-height: 20px;
+    min-height: 18px;
     opacity: 0.9;
+    white-space: pre-line; /* allows \n line breaks */
 }
 </style>
 </head>
@@ -151,6 +151,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzPYoPFV6Ez73oq38hebKGFYEEqyOhCd8gBxwlChwJUoGWOc2HiEFurNUX2KXidjz0/exec";
+const SECRET = "JFC2026PRIVATEKEY";
+
 window.login = function() {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -158,11 +161,9 @@ window.login = function() {
 
     signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-        message.style.color = "#00ff99";
-        message.textContent = "Login Successful.";
+        window.location.href = "/Jalandhar-Fitness-Club/dashboard.html";
     })
     .catch(error => {
-        message.style.color = "#ff4d4d";
         message.textContent = error.message;
     });
 };
@@ -174,10 +175,30 @@ window.register = async function() {
 
     try {
         await createUserWithEmailAndPassword(auth, email, password);
+
+        fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                email: email,
+                secret: SECRET
+            })
+        });
+
         message.style.color = "#00ff99";
-        message.innerHTML = "Account Created Successfully.<br><br>Please Subscribe First.<br>Approval within 24 Hours.<br>Please Login Back After Approval.";
+        message.textContent =
+            "Account Created Successfully.\n\n" +
+            "Please Subscribe First.\n" +
+            "Approval within 24 Hours.\n" +
+            "Please Login Back After Approval.";
+
+        // Give user time to read the message (still redirects like your original)
+        setTimeout(() => {
+            window.location.href = "/Jalandhar-Fitness-Club/dashboard.html";
+        }, 5000);
+
     } catch (error) {
-        message.style.color = "#ff4d4d";
         message.textContent = error.message;
     }
 };

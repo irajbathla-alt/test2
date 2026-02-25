@@ -1,141 +1,187 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login — Jalandhar Fitness Club</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Member Access</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  background:#000;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;
-  display:flex;justify-content:center;align-items:center;min-height:100vh;
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-:root{--b:rgba(255,255,255,0.09);--b2:rgba(255,255,255,0.16);--s:#0d0d0d;--s2:#161616;--m:rgba(255,255,255,0.35);--red:#e05555}
-.card{
-  width:90%;max-width:390px;
-  background:var(--s);border:1px solid var(--b);border-radius:20px;
-  padding:36px 28px;
-  box-shadow:0 40px 100px rgba(0,0,0,0.8);
-  animation:up 0.55s cubic-bezier(0.16,1,0.3,1) both;
+
+.wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 60px 40px;
+    background: #111;
+    border-radius: 22px;
+    border: 1px solid #1a1a1a;
 }
-@keyframes up{0%{opacity:0;transform:translateY(24px) scale(0.98)}100%{opacity:1;transform:none}}
-.back{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--m);text-decoration:none;margin-bottom:22px;transition:color 0.2s}
-.back:hover{color:#fff}
-.logo{font-family:'Cinzel',serif;font-size:15px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:#fff;text-align:center;margin-bottom:4px}
-.logo-sub{font-size:10px;color:var(--m);letter-spacing:1.5px;text-transform:uppercase;text-align:center;margin-bottom:26px}
-/* Tabs */
-.tabs{display:flex;background:var(--s2);border-radius:10px;padding:3px;margin-bottom:22px;border:1px solid var(--b)}
-.tab{flex:1;padding:10px;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:0.3px;cursor:pointer;color:var(--m);transition:all 0.2s;border:none;background:transparent;font-family:'Inter',sans-serif}
-.tab.active{background:#fff;color:#000;box-shadow:0 2px 8px rgba(0,0,0,0.4)}
-/* Fields */
-.lbl{display:block;font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--m);margin-bottom:7px}
-input{
-  width:100%;padding:13px 14px;margin-bottom:11px;
-  background:var(--s2);border:1px solid var(--b);border-radius:10px;
-  color:#fff;font-size:14px;font-family:'Inter',sans-serif;
-  transition:border-color 0.2s,box-shadow 0.2s;outline:none;
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
 }
-input:focus{border-color:rgba(255,255,255,0.35);box-shadow:0 0 0 3px rgba(255,255,255,0.05)}
-input::placeholder{color:rgba(255,255,255,0.18)}
-/* Register note */
-#reg-info{
-  background:rgba(255,255,255,0.03);border:1px solid var(--b);
-  border-radius:10px;padding:11px 13px;margin-bottom:14px;
-  font-size:12px;color:var(--m);line-height:1.7;display:none;
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
 }
-/* Button */
-.submit{
-  width:100%;padding:14px;border-radius:11px;border:none;
-  font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1.5px;cursor:pointer;
-  background:#fff;color:#000;transition:all 0.2s ease;margin-top:3px;
-  position:relative;
+
+label {
+    font-size: 13px;
+    opacity: 0.6;
+    margin-bottom: 6px;
 }
-.submit:hover{background:rgba(255,255,255,0.88);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,255,255,0.1)}
-.submit:active{transform:translateY(0)}
-.submit:disabled{opacity:0.35;cursor:not-allowed;transform:none}
-.spin{display:inline-block;width:13px;height:13px;border:2px solid rgba(0,0,0,0.2);border-top-color:#000;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;margin-right:6px}
-@keyframes spin{to{transform:rotate(360deg)}}
-/* Msg */
-#msg{min-height:18px;margin-top:11px;font-size:12px;text-align:center;border-radius:8px;transition:all 0.2s}
-#msg.error{color:var(--red);background:rgba(224,85,85,0.07);border:1px solid rgba(224,85,85,0.2);padding:9px 12px}
+
+input {
+    padding: 14px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #555;
+}
+
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.primary-btn {
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: #e5e5e5;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+    transform: scale(1.03);
+}
+
+.secondary-btn {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 13px;
+    text-align: center;
+    min-height: 20px;
+    opacity: 0.9;
+}
 </style>
 </head>
+
 <body>
-<div class="card">
-  <a class="back" href="index.html">← Back</a>
-  <div class="logo">Jalandhar Fitness Club</div>
-  <div class="logo-sub">Member Portal</div>
-  <div class="tabs">
-    <button class="tab active" id="t-in" onclick="sw('login')">Sign In</button>
-    <button class="tab" id="t-reg" onclick="sw('register')">Create Account</button>
-  </div>
-  <label class="lbl">Email Address</label>
-  <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
-  <label class="lbl">Password</label>
-  <input type="password" id="pass" placeholder="Minimum 6 characters" autocomplete="current-password">
-  <div id="reg-info">🕐 Account activation takes up to <strong>24 hours</strong>.<br>After registering your email is automatically added to our member list. Once we approve you, you can browse and purchase programs.</div>
-  <button class="submit" id="sub" onclick="go()">Sign In</button>
-  <div id="msg"></div>
+
+<div class="wrapper">
+
+    <h1>Member Access</h1>
+
+    <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" required>
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" required>
+    </div>
+
+    <div class="button-group">
+        <button class="primary-btn" onclick="login()">Sign In</button>
+        <button class="secondary-btn" onclick="register()">Create Account</button>
+    </div>
+
+    <div class="message" id="message"></div>
+
 </div>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-const app = initializeApp({
-  apiKey:"AIzaSyCTQDlsZNhZ-I6CvlNgZDPgpJJYlYto6Rk",
-  authDomain:"jalandhar-fitness-club.firebaseapp.com",
-  projectId:"jalandhar-fitness-club",
-  storageBucket:"jalandhar-fitness-club.firebasestorage.app",
-  messagingSenderId:"899365845803",
-  appId:"1:899365845803:web:a75a331462df8b017f236e"
-});
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCTQDlsZNhZ-I6CvlNgZDPgpJJYlYto6Rk",
+  authDomain: "jalandhar-fitness-club.firebaseapp.com",
+  projectId: "jalandhar-fitness-club",
+  storageBucket: "jalandhar-fitness-club.firebasestorage.app",
+  messagingSenderId: "899365845803",
+  appId: "1:899365845803:web:a75a331462df8b017f236e"
+};
+
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-let tab = 'login';
-window.sw = t => {
-  tab=t;
-  document.getElementById('t-in').classList.toggle('active',t==='login');
-  document.getElementById('t-reg').classList.toggle('active',t==='register');
-  document.getElementById('sub').textContent = t==='login'?'Sign In':'Create Account';
-  document.getElementById('reg-info').style.display = t==='register'?'block':'none';
-  msg('','');
+
+window.login = function() {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const message = document.getElementById("message");
+
+    signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+        message.style.color = "#00ff99";
+        message.textContent = "Login Successful.";
+    })
+    .catch(error => {
+        message.style.color = "#ff4d4d";
+        message.textContent = error.message;
+    });
 };
-window.go = () => {
-  const e=document.getElementById('email').value.trim();
-  const p=document.getElementById('pass').value.trim();
-  if(!e||!p){msg('Please fill in both fields.','error');return}
-  if(p.length<6){msg('Password must be at least 6 characters.','error');return}
-  const btn=document.getElementById('sub');
-  btn.disabled=true;
-  btn.innerHTML='<span class="spin"></span>'+(tab==='login'?'Signing in…':'Creating account…');
-  msg('','');
-  if(tab==='login'){
-    signInWithEmailAndPassword(auth,e,p)
-      .then(()=>window.location.href='dashboard.html')
-      .catch(err=>{
-        msg(err.code==='auth/invalid-credential'?'Incorrect email or password.':err.message,'error');
-        rst();
-      });
-  } else {
-    createUserWithEmailAndPassword(auth,e,p)
-      .then(async()=>{
-        sessionStorage.setItem('newEmail',e);
-        // ── POST to Google Apps Script → adds member row to your Sheet ──
-        const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbwgsRYF6oi0RrfSAca2AhvBKpmokXkt5c_aPHYfQxqK19MEdisOj-EATPgu8uW2YIA/exec'; // ← paste your Web App URL here
-        try{
-          await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e})});
-        }catch(err){console.log('Sheet sync:',err);}
-        window.location.href='pending.html';
-      })
-      .catch(err=>{
-        msg(err.code==='auth/email-already-in-use'?'Account already exists — try signing in.':err.message,'error');
-        rst();
-      });
-  }
+
+window.register = async function() {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const message = document.getElementById("message");
+
+    try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        message.style.color = "#00ff99";
+        message.innerHTML = "Account Created Successfully.<br><br>Please Subscribe First.<br>Approval within 24 Hours.<br>Please Login Back After Approval.";
+    } catch (error) {
+        message.style.color = "#ff4d4d";
+        message.textContent = error.message;
+    }
 };
-function msg(t,c){const el=document.getElementById('msg');el.textContent=t;el.className=c}
-function rst(){const btn=document.getElementById('sub');btn.disabled=false;btn.textContent=tab==='login'?'Sign In':'Create Account'}
 </script>
+
 </body>
 </html>

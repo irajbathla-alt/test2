@@ -298,13 +298,8 @@ renderPlan();
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged }
+import { getAuth, onAuthStateChanged } 
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-// ── THIS PAGE'S PROGRAM ID ──────────────────────────────────────
-// Must match exactly what you put in Column B of your Google Sheet
-const THIS_PROGRAM = 'shred';
-// ────────────────────────────────────────────────────────────────
 
 const firebaseConfig = {
   apiKey: "AIzaSyCTQDlsZNhZ-I6CvlNgZDPgpJJYlYto6Rk",
@@ -318,79 +313,10 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const auth = getAuth();
 
-async function getMemberData(email) {
-  try {
-    const res  = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRCqo3ulVGf4U41yNtpBOrSESFfOBsi7M4WRHUDzqyU_poz9QPGEUhCN7xvJKzevmtIrnKxrEM-Qy1h/pub?output=csv");
-    const text = await res.text();
-    const rows = text.split("\n").map(r => r.trim()).filter(r => r && !r.toLowerCase().startsWith("email"));
-    for (let row of rows) {
-      const cols = row.split(",");
-      if ((cols[0]||"").trim().toLowerCase() === email.toLowerCase()) {
-        return {
-          program:  (cols[1]||"").trim().toLowerCase(),
-          expiry:   (cols[2]||"").trim(),
-          approved: ['yes','true'].includes((cols[3]||"").trim().toLowerCase()),
-          revoked:  ['yes','true'].includes((cols[4]||"").trim().toLowerCase()),
-        };
-      }
-    }
-  } catch(e) {}
-  return null;
-}
-
-function showAccessDenied(reason) {
-  // Inject a full-screen access denied overlay
-  const overlay = document.createElement('div');
-  overlay.style.cssText = `
-    position:fixed;inset:0;background:#000;z-index:99999;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:32px;font-family:'Inter',sans-serif;
-    -webkit-font-smoothing:antialiased;
-  `;
-  overlay.innerHTML = `
-    <div style="width:64px;height:64px;border-radius:50%;border:1.5px solid rgba(224,85,85,0.5);background:rgba(224,85,85,0.07);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px">✕</div>
-    <div style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;letter-spacing:1px;color:#fff;margin-bottom:10px">Access Denied</div>
-    <div style="font-size:13px;color:rgba(255,255,255,0.4);max-width:280px;line-height:1.7;margin-bottom:28px">${reason}</div>
-    <button onclick="window.location.href='dashboard.html'" style="padding:13px 28px;border-radius:11px;border:none;background:#fff;color:#000;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;margin-bottom:10px">Go to Dashboard</button>
-    <button onclick="window.location.href='programs.html'" style="padding:12px 28px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);background:transparent;color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:color 0.2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Browse Programs</button>
-  `;
-  document.body.appendChild(overlay);
-}
-
-onAuthStateChanged(auth, async (user) => {
-  // 1. Not logged in → login page
-  if (!user) { window.location.href = "login.html"; return; }
-
-  const data = await getMemberData(user.email);
-
-  // 2. Not in sheet → pending
-  if (!data) { window.location.href = "dashboard.html"; return; }
-
-  // 3. Not approved yet
-  if (!data.approved) { window.location.href = "dashboard.html"; return; }
-
-  // 4. Revoked
-  if (data.revoked) { showAccessDenied("Your access has been revoked. Please contact us or purchase a new program."); return; }
-
-  // 5. Expired
-  if (data.expiry && new Date() > new Date(data.expiry)) {
-    showAccessDenied("Your program access has expired. Purchase a new program to continue training.");
-    return;
+onAuthStateChanged(auth, (user)=>{
+  if(!user){
+    window.location.href="login.html";
   }
-
-  // 6. Wrong program — they paid for something else
-  if (data.program !== THIS_PROGRAM) {
-    if (data.program) {
-      // Redirect them silently to the program they actually paid for
-      const routes = { shred:'shred.html', strength:'strength.html', bikini:'bikini.html', p4:'p4.html', p5:'p5.html', p6:'p6.html', p7:'p7.html', p8:'p8.html', p9:'p9.html', p10:'p10.html' };
-      const correctFile = routes[data.program];
-      if (correctFile) { window.location.href = correctFile; return; }
-    }
-    showAccessDenied("You don't have access to this program. Check your dashboard to see what you've purchased.");
-    return;
-  }
-
-  // ✅ All checks passed — they have access to THIS program
 });
 </script>
 </body>

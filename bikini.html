@@ -141,1032 +141,1987 @@ header{position:sticky;top:0;z-index:50;margin:-14px -14px 12px;padding:12px 14p
 
 const SPLIT = {
   "1": {
-
-  "1": {
-    title: "Glutes & Delts",
-    morning: [],
-    workout: [
-      { name: "Barbell Hip Thrust", sets: ["10","5","20","20"] },
-      { name: "Barbell Walking Lunge", sets: ["10 each leg","10 each leg","10 each leg","10 each leg"] },
-      { name: "Back Extension", sets: ["30","30"] },
-      { name: "Gluteator", sets: ["20","20","20","20"] },
-      { name: "Lateral Raise Machine", sets: ["20","20","20","20"] },
-      { name: "Alternating DB Front Raise", sets: ["10","10","10","10"] },
-      { name: "Reverse Cable Fly", sets: ["10","10","10","10"] },
-      { name: "Six Ways", sets: ["12","12"] }
-    ],
-    finish: []
-  },
-
-  "2": {
-    title: "Back & Arms",
-    morning: [],
-    workout: [
-      { name: "Close Grip Pulldown", sets: ["10-20"] },
-      { name: "Chin-Ups", sets: ["Failure","Failure"] },
-      { name: "Barbell T-Bar Row", sets: ["10","10"] },
-      { name: "Wide Grip Pulldown", sets: ["10","10"] },
-      { name: "Close Grip Bench Press", sets: ["6","9","12"] },
-      { name: "EZ Bar Curl", sets: ["10","10","10"] },
-      { name: "Overhead Rope Extension", sets: ["10","10","10"] },
-      { name: "Preacher Curl", sets: ["10","10","10"] }
-    ],
-    finish: []
-  },
-
-  "3": { title: "Rest Day", morning: [], workout: [], finish: [] },
-
-  "4": {
-    title: "Shoulders",
-    morning: [],
-    workout: [
-      { name: "Push Press (4 sec negative)", sets: ["5","5"] },
-      { name: "Incline DB Press", sets: ["15","15","15"] },
-      { name: "Seated DB Lateral Raise (4 sec negative)", sets: ["8","8"] },
-      { name: "Cable Upright Row", sets: ["10","10","10","10"] },
-      { name: "Standing DB Lateral Raise", sets: ["12","10","8","8"] },
-      { name: "Front Plate Raise", sets: ["10","10"] },
-      { name: "Reverse Pec Deck", sets: ["12","12","12","12"] }
-    ],
-    finish: []
-  },
-
-  
-"5": {
-
-  "1": {
-    title: "Glutes",
-    morning: [],
-    workout: [
-      { name: "Barbell Glute Bridge (Dropset)", sets: ["10","10","10"] },
-      { name: "Gluteator", sets: ["20","20","20"] },
-      { name: "Bulgarian Split Squat", sets: ["10","10","10"] },
-      { name: "Stiff-Legged Deadlift", sets: ["10","10","10"] },
-      { name: "Lying Hip Abduction", sets: ["30","30"] }
-    ],
-    finish: []
-  },
-
-  "2": {
-    title: "Delts & Abs",
-    morning: [],
-    workout: [
-      { name: "Seated Barbell Military Press", sets: ["8","8","8"] },
-      { name: "Upright Cable Row", sets: ["10","10","10"] },
-      { name: "Delt Blaster", sets: ["10/10/10","10/10/10","10/10/10"] },
-      { name: "Seated Six Ways", sets: ["10","10","10"] },
-      { name: "Hanging Leg Raise", sets: ["10","10","10"] },
-      { name: "Cable Crunch", sets: ["20","20"] },
-      { name: "Decline Weighted Sit-up", sets: ["10","10","10"] }
-    ],
-    finish: []
-  },
-
-  "3": { title: "Rest Day", morning: [], workout: [], finish: [] },
-
-  "4": {
-    title: "Chest & Back",
-    morning: [],
-    workout: [
-      { name: "Weighted Chin-up", sets: ["3","3","3"] },
-      { name: "Close-Grip Bench Press", sets: ["8","8","8"] },
-      { name: "Inverted Row", sets: ["Failure","Failure","Failure"] },
-      { name: "One-Arm Dumbbell Row", sets: ["10","10"] },
-      { name: "Seated Face Pull", sets: ["12","12"] },
-      { name: "EZ-Bar Curl / Skullcrusher Superset", sets: ["10","10","10"] }
-    ],
-    finish: []
-  },
-
-  "5": {
-    title: "Legs",
-    morning: [],
-    workout: [
-      { name: "Single-Leg Press", sets: ["10","10","10"] },
-      { name: "Leg Press", sets: ["10","10","10"] },
-      { name: "Standing Leg Curl", sets: ["10","10","10"] },
-      { name: "Goblet Squat", sets: ["10","10","10"] },
-      { name: "Back Extension", sets: ["10","10","10"] },
-      { name: "Calf Raise", sets: ["10","10"] }
-    ],
-    finish: []
-  },
-
-  "6": {
-    title: "Delts & Glutes",
-    morning: [],
-    workout: [
-      { name: "One-Arm Cable Lateral Raise", sets: ["10","10","10"] },
-      { name: "Barbell Front Raise", sets: ["10","10","10"] },
-      { name: "Reverse Pec Deck", sets: ["12","12","12"] },
-      { name: "Banded Barbell Glute Bridge", sets: ["30","30","30"] },
-      { name: "Banded Seated Hip Abduction", sets: ["30","30","30"] },
-      { name: "Dumbbell Frog Pump", sets: ["30","30","30"] }
-    ],
-    finish: []
-  },
-
-  "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-},
-"6": {
-    title: "Glutes Pump",
-    morning: [],
-    workout: [
-      { name: "Banded Hip Thrust", sets: ["20","20"] },
-      { name: "Banded Side Leg Raise", sets: ["8","8"] },
-      { name: "DB Frog Pump", sets: ["30","30"] },
-      { name: "Banded Seated Hip Abduction (Lean Back)", sets: ["30"] },
-      { name: "Banded Seated Hip Abduction (Upright)", sets: ["30"] },
-      { name: "Banded Seated Hip Abduction (Lean Forward)", sets: ["30"] }
-    ],
-    finish: []
-  },
-
-  "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-}
-,
-  "2": {
     "1": {
-      title: "Legs, Lower Abs & Calves",
-      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
-      workout: [
-        { name: "Leg Extension (20,10,20)", sets: ["20","10","20"] },
-        { name: "Leg Press (30,20,10,20,30)", sets: ["30","20","10","20","30"] },
-        { name: "Alt Barbell Lunge + Squat Combo", sets: ["10","10","10"] },
-        { name: "Seated Calf Raise (30,20,10,20,30)", sets: ["30","20","10","20","30"] },
-        { name: "Lying Incline Leg Raises", sets: ["15","15","15"] },
-        { name: "Exercise Ball Knee Tuck", sets: ["20","20","20"] },
-        { name: "Plank Hold", sets: ["30s","30s","30s"] }
+      "title": "Glutes & Delts",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Barbell Hip Thrust",
+          "sets": [
+            "10",
+            "5",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Barbell Walking Lunge",
+          "sets": [
+            "10 each leg",
+            "10 each leg",
+            "10 each leg",
+            "10 each leg"
+          ]
+        },
+        {
+          "name": "Back Extension",
+          "sets": [
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Gluteator",
+          "sets": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Lateral Raise Machine",
+          "sets": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Alternating DB Front Raise",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Cable Fly",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Six Ways",
+          "sets": [
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+      "finish": []
     },
     "2": {
-      title: "Chest & Shoulders",
-      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
-      workout: [
-        { name: "Hammer Press (20,15,10/10)", sets: ["20","15","10/10"] },
-        { name: "Incline Smith Press (20,10,10/10)", sets: ["20","10","10/10"] },
-        { name: "Seated Cable Fly (20,15,10/10)", sets: ["20","15","10/10"] },
-        { name: "Wide-Hand Pushups", sets: ["Failure","Failure","Failure"] },
-        { name: "Barbell Front Raise + Press Combo", sets: ["10","10","10"] },
-        { name: "Barbell Side Raises (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "DB Rear Delt Fly", sets: ["20","20","20"] }
+      "title": "Back & Arms",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Close Grip Pulldown",
+          "sets": [
+            "10-20"
+          ]
+        },
+        {
+          "name": "Chin-Ups",
+          "sets": [
+            "Failure",
+            "Failure"
+          ]
+        },
+        {
+          "name": "Barbell T-Bar Row",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Wide Grip Pulldown",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Close Grip Bench Press",
+          "sets": [
+            "6",
+            "9",
+            "12"
+          ]
+        },
+        {
+          "name": "EZ Bar Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Overhead Rope Extension",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Preacher Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+      "finish": []
     },
     "3": {
-      title: "Arms",
-      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
-      workout: [
-        { name: "Overhead Triceps Extension", sets: ["15","15","15"] },
-        { name: "Seated Rope Extension (10/10/10)", sets: ["10/10/10","10/10/10","10/10/10"] },
-        { name: "Dips", sets: ["10","10","10"] },
-        { name: "EZ Spider Curl", sets: ["10-12","10-12","10-12"] },
-        { name: "Standing Banded Curl", sets: ["10-12","10-12","10-12"] },
-        { name: "Low Cable EZ Curl", sets: ["10-12","10-12","10-12"] },
-        { name: "Low Banded Curl", sets: ["8-10","8-10","8-10"] },
-        { name: "Incline DB Curl", sets: ["10","10","10"] },
-        { name: "Seated Banded Curl", sets: ["10","10","10"] }
-      ],
-      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
     },
     "4": {
-      title: "Lower Back, Hamstrings & Upper Abs",
-      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
-      workout: [
-        { name: "Deadlifts (5,5/5,8/8)", sets: ["5","5/5","8/8"] },
-        { name: "Rack Deadlift", sets: ["10","10","10"] },
-        { name: "Banded Good Mornings", sets: ["20","20","20"] },
-        { name: "Lying Ham Curl (20,10/10,10/10/10)", sets: ["20","10/10","10/10/10"] },
-        { name: "Standing Cable Ham Curl", sets: ["20","15","10"] },
-        { name: "Barbell Straight-Arm Situps", sets: ["10","10","10"] },
-        { name: "Barbell Rollouts", sets: ["10","10","10"] },
-        { name: "Crunches", sets: ["10","10","10"] }
+      "title": "Shoulders",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Push Press (4 sec negative)",
+          "sets": [
+            "5",
+            "5"
+          ]
+        },
+        {
+          "name": "Incline DB Press",
+          "sets": [
+            "15",
+            "15",
+            "15"
+          ]
+        },
+        {
+          "name": "Seated DB Lateral Raise (4 sec negative)",
+          "sets": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Cable Upright Row",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Standing DB Lateral Raise",
+          "sets": [
+            "12",
+            "10",
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Front Plate Raise",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Pec Deck",
+          "sets": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+      "finish": []
     },
     "5": {
-      title: "Upper Back & Calves",
-      morning: [{ name: "AM Cardio", sets: ["25 min"] }],
-      workout: [
-        { name: "Pull-ups (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Hammer Row (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Supported Smith Row (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Cable Straight-Arm Pulldown", sets: ["10","10","10"] },
-        { name: "High Pulley Cable Row", sets: ["10","10","10"] },
-        { name: "Single-Leg DB Calf Raise (30,25,20,20,20)", sets: ["30","25","20","20","20"] }
+      "title": "Legs",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Lying Leg Curl",
+          "sets": [
+            "6",
+            "6",
+            "6"
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "sets": [
+            "20",
+            "15",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Stiff Leg Deadlift",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Leg Extension",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        },
+        {
+          "name": "Seated Leg Curl",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["25 min"] }]
+      "finish": []
     },
-    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-  }
-
-,
-  "2": {
-
-    "1": {
-      title: "Glutes & Delts",
-      morning: [],
-      workout: [
-        { name: "Barbell Hip Thrust", sets: ["10","5","20","20"] },
-        { name: "Barbell Walking Lunge", sets: ["10 each leg","10 each leg","10 each leg","10 each leg"] },
-        { name: "Back Extension", sets: ["30","30"] },
-        { name: "Gluteator", sets: ["20","20","20","20"] },
-        { name: "Lateral Raise Machine", sets: ["20","20","20","20"] },
-        { name: "Alternating DB Front Raise", sets: ["10","10","10","10"] },
-        { name: "Reverse Cable Fly", sets: ["10","10","10","10"] },
-        { name: "Six Ways", sets: ["12","12"] }
-      ],
-      finish: []
-    },
-
-    "2": {
-      title: "Back & Arms",
-      morning: [],
-      workout: [
-        { name: "Close Grip Pulldown", sets: ["10-20"] },
-        { name: "Chin-Ups", sets: ["Failure","Failure"] },
-        { name: "Barbell T-Bar Row", sets: ["10","10"] },
-        { name: "Wide Grip Pulldown", sets: ["10","10"] },
-        { name: "Close Grip Bench Press", sets: ["6","9","12"] },
-        { name: "EZ Bar Curl", sets: ["10","10","10"] },
-        { name: "Overhead Rope Extension", sets: ["10","10","10"] },
-        { name: "Preacher Curl", sets: ["10","10","10"] }
-      ],
-      finish: []
-    },
-
-    "3": { title: "Rest Day", morning: [], workout: [], finish: [] },
-
-    "4": {
-      title: "Shoulders",
-      morning: [],
-      workout: [
-        { name: "Push Press (4 sec negative)", sets: ["5","5"] },
-        { name: "Incline DB Press", sets: ["15","15","15"] },
-        { name: "Seated DB Lateral Raise (4 sec negative)", sets: ["8","8"] },
-        { name: "Cable Upright Row", sets: ["10","10","10","10"] },
-        { name: "Standing DB Lateral Raise", sets: ["12","10","8","8"] },
-        { name: "Front Plate Raise", sets: ["10","10"] },
-        { name: "Reverse Pec Deck", sets: ["12","12","12","12"] }
-      ],
-      finish: []
-    },
-
-    "5": {
-      title: "Legs",
-      morning: [],
-      workout: [
-        { name: "Lying Leg Curl", sets: ["6","6","6"] },
-        { name: "Leg Press", sets: ["20","15","10","10"] },
-        { name: "Stiff Leg Deadlift", sets: ["10","10","10","10"] },
-        { name: "Leg Extension", sets: ["12","12","12"] },
-        { name: "Seated Leg Curl", sets: ["12","12","12"] }
-      ],
-      finish: []
-    },
-
     "6": {
-      title: "Glutes Pump",
-      morning: [],
-      workout: [
-        { name: "Banded Hip Thrust", sets: ["20","20"] },
-        { name: "Banded Side Leg Raise", sets: ["8","8"] },
-        { name: "DB Frog Pump", sets: ["30","30"] },
-        { name: "Banded Seated Hip Abduction (Lean Back)", sets: ["30"] },
-        { name: "Banded Seated Hip Abduction (Upright)", sets: ["30"] },
-        { name: "Banded Seated Hip Abduction (Lean Forward)", sets: ["30"] }
+      "title": "Glutes Pump",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Banded Hip Thrust",
+          "sets": [
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Banded Side Leg Raise",
+          "sets": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "DB Frog Pump",
+          "sets": [
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Lean Back)",
+          "sets": [
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Upright)",
+          "sets": [
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Lean Forward)",
+          "sets": [
+            "30"
+          ]
+        }
       ],
-      finish: []
+      "finish": []
     },
-
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
+    "7": {
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    }
+  },
+  "2": {
+    "1": {
+      "title": "Glutes & Delts",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Barbell Hip Thrust",
+          "sets": [
+            "10",
+            "5",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Barbell Walking Lunge",
+          "sets": [
+            "10 each leg",
+            "10 each leg",
+            "10 each leg",
+            "10 each leg"
+          ]
+        },
+        {
+          "name": "Back Extension",
+          "sets": [
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Gluteator",
+          "sets": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Lateral Raise Machine",
+          "sets": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Alternating DB Front Raise",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Cable Fly",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Six Ways",
+          "sets": [
+            "12",
+            "12"
+          ]
+        }
+      ],
+      "finish": []
+    },
+    "2": {
+      "title": "Back & Arms",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Close Grip Pulldown",
+          "sets": [
+            "10-20"
+          ]
+        },
+        {
+          "name": "Chin-Ups",
+          "sets": [
+            "Failure",
+            "Failure"
+          ]
+        },
+        {
+          "name": "Barbell T-Bar Row",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Wide Grip Pulldown",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Close Grip Bench Press",
+          "sets": [
+            "6",
+            "9",
+            "12"
+          ]
+        },
+        {
+          "name": "EZ Bar Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Overhead Rope Extension",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Preacher Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        }
+      ],
+      "finish": []
+    },
+    "3": {
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    },
+    "4": {
+      "title": "Shoulders",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Push Press (4 sec negative)",
+          "sets": [
+            "5",
+            "5"
+          ]
+        },
+        {
+          "name": "Incline DB Press",
+          "sets": [
+            "15",
+            "15",
+            "15"
+          ]
+        },
+        {
+          "name": "Seated DB Lateral Raise (4 sec negative)",
+          "sets": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Cable Upright Row",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Standing DB Lateral Raise",
+          "sets": [
+            "12",
+            "10",
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Front Plate Raise",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Pec Deck",
+          "sets": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ]
+        }
+      ],
+      "finish": []
+    },
+    "5": {
+      "title": "Legs",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Lying Leg Curl",
+          "sets": [
+            "6",
+            "6",
+            "6"
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "sets": [
+            "20",
+            "15",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Stiff Leg Deadlift",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Leg Extension",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        },
+        {
+          "name": "Seated Leg Curl",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        }
+      ],
+      "finish": []
+    },
+    "6": {
+      "title": "Glutes Pump",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Banded Hip Thrust",
+          "sets": [
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Banded Side Leg Raise",
+          "sets": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "DB Frog Pump",
+          "sets": [
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Lean Back)",
+          "sets": [
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Upright)",
+          "sets": [
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Lean Forward)",
+          "sets": [
+            "30"
+          ]
+        }
+      ],
+      "finish": []
+    },
+    "7": {
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    }
+  },
   "3": {
-
     "1": {
-      title: "Legs, Calves & Lower Abs",
-      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
-      workout: [
-        { name: "Leg Extension (25/25 + 5x10 Pyramid)", sets: ["25/25","10","10","10","10","10"] },
-        { name: "Landmine Squat", sets: ["25","25","25"] },
-        { name: "Hex Bar Squat", sets: ["25","25","25"] },
-        { name: "Bulgarian Split Squat", sets: ["20","20","20"] },
-        { name: "Smith Machine Front Squat", sets: ["20","20","20"] },
-        { name: "Seated Calf Raises", sets: ["30","30","30","30","30"] },
-        { name: "Captain’s Chair Leg Raises", sets: ["20","20","20"] },
-        { name: "Medicine Ball Pass", sets: ["Failure","Failure","Failure"] },
-        { name: "Cross-Body Mountain Climbers", sets: ["Failure","Failure","Failure"] }
+      "title": "Glutes & Delts",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Barbell Hip Thrust",
+          "sets": [
+            "10",
+            "5",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Barbell Walking Lunge",
+          "sets": [
+            "10 each leg",
+            "10 each leg",
+            "10 each leg",
+            "10 each leg"
+          ]
+        },
+        {
+          "name": "Back Extension",
+          "sets": [
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Gluteator",
+          "sets": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Lateral Raise Machine",
+          "sets": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Alternating DB Front Raise",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Cable Fly",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Six Ways",
+          "sets": [
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+      "finish": []
     },
-
     "2": {
-      title: "Chest & Shoulders",
-      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
-      workout: [
-        { name: "Incline DB Fly & Press Combo", sets: ["20","20","20"] },
-        { name: "Incline Close-Grip DB Press", sets: ["10","10","10"] },
-        { name: "Incline DB Press", sets: ["10","10","10"] },
-        { name: "Rollout Fly", sets: ["10","10","10"] },
-        { name: "Pushups", sets: ["10","10","10"] },
-        { name: "Smith Weighted Pushups", sets: ["20","20","20"] },
-        { name: "Smith Close-Grip Press (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Squat Press Shoulder Press (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Single-Arm Landmine Press", sets: ["20","20","20"] },
-        { name: "Single-Arm Bentover Rear Delt Raise", sets: ["10-12","10-12","10-12"] },
-        { name: "Leg Extension Single-Arm Rear Delt Raise", sets: ["10-12","10-12","10-12"] }
+      "title": "Back & Arms",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Close Grip Pulldown",
+          "sets": [
+            "10-20"
+          ]
+        },
+        {
+          "name": "Chin-Ups",
+          "sets": [
+            "Failure",
+            "Failure"
+          ]
+        },
+        {
+          "name": "Barbell T-Bar Row",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Wide Grip Pulldown",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Close Grip Bench Press",
+          "sets": [
+            "6",
+            "9",
+            "12"
+          ]
+        },
+        {
+          "name": "EZ Bar Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Overhead Rope Extension",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Preacher Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+      "finish": []
     },
-
     "3": {
-      title: "Arms",
-      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
-      workout: [
-        { name: "Kneeling Cable Overhead Triceps Extension (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Machine Triceps Extension (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Machine Triceps Pressdown (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Standing Cable Curls", sets: ["10","10","10"] },
-        { name: "Lying Cable Curls", sets: ["10","10","10"] },
-        { name: "Lying High Cable Curls", sets: ["10","10","10"] },
-        { name: "Standing High Cable Curls", sets: ["10","10","10"] },
-        { name: "Reverse-Grip EZ-Bar Curls", sets: ["10","10","10"] },
-        { name: "Close-Grip EZ-Bar Curls", sets: ["10","10","10"] }
-      ],
-      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
     },
-
     "4": {
-      title: "Hamstrings, Lower Back & Upper Abs",
-      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
-      workout: [
-        { name: "Single-Leg Hamstring Curl", sets: ["12","10","8","8","6"] },
-        { name: "DB Stiff-Leg Deadlift", sets: ["10","10","10","10","10"] },
-        { name: "Weighted Hyperextensions (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Barbell Good Mornings (20,18,16)", sets: ["20","18","16"] },
-        { name: "Weighted Crunches", sets: ["20","20","20"] },
-        { name: "Cross-Body Crunches", sets: ["20","20","20"] },
-        { name: "Exercise Ball Rollouts", sets: ["20","20","20"] },
-        { name: "Ab Twists", sets: ["50","50","50"] }
+      "title": "Shoulders",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Push Press (4 sec negative)",
+          "sets": [
+            "5",
+            "5"
+          ]
+        },
+        {
+          "name": "Incline DB Press",
+          "sets": [
+            "15",
+            "15",
+            "15"
+          ]
+        },
+        {
+          "name": "Seated DB Lateral Raise (4 sec negative)",
+          "sets": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Cable Upright Row",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Standing DB Lateral Raise",
+          "sets": [
+            "12",
+            "10",
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Front Plate Raise",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Pec Deck",
+          "sets": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+      "finish": []
     },
-
     "5": {
-      title: "Upper Back & Calves",
-      morning: [{ name: "AM Cardio", sets: ["30 min"] }],
-      workout: [
-        { name: "DB Seal Row (10/10)", sets: ["10/10","10/10","10/10"] },
-        { name: "Incline Straight-Arm Pullover", sets: ["12","12","12"] },
-        { name: "Barbell Bentover Row", sets: ["10","10","10"] },
-        { name: "Seated EZ-Bar Shrugs", sets: ["20","20","20"] },
-        { name: "Calf Press", sets: ["20","20","20","20","20"] }
+      "title": "Legs",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Lying Leg Curl",
+          "sets": [
+            "6",
+            "6",
+            "6"
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "sets": [
+            "20",
+            "15",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Stiff Leg Deadlift",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Leg Extension",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        },
+        {
+          "name": "Seated Leg Curl",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["30 min"] }]
+      "finish": []
     },
-
-    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
-  "3": {
-
-    "1": {
-      title: "Glutes & Delts",
-      morning: [],
-      workout: [
-        { name: "Barbell Hip Thrust", sets: ["10","5","20","20"] },
-        { name: "Barbell Walking Lunge", sets: ["10 each leg","10 each leg","10 each leg","10 each leg"] },
-        { name: "Back Extension", sets: ["30","30"] },
-        { name: "Gluteator", sets: ["20","20","20","20"] },
-        { name: "Lateral Raise Machine", sets: ["20","20","20","20"] },
-        { name: "Alternating DB Front Raise", sets: ["10","10","10","10"] },
-        { name: "Reverse Cable Fly", sets: ["10","10","10","10"] },
-        { name: "Six Ways", sets: ["12","12"] }
-      ],
-      finish: []
-    },
-
-    "2": {
-      title: "Back & Arms",
-      morning: [],
-      workout: [
-        { name: "Close Grip Pulldown", sets: ["10-20"] },
-        { name: "Chin-Ups", sets: ["Failure","Failure"] },
-        { name: "Barbell T-Bar Row", sets: ["10","10"] },
-        { name: "Wide Grip Pulldown", sets: ["10","10"] },
-        { name: "Close Grip Bench Press", sets: ["6","9","12"] },
-        { name: "EZ Bar Curl", sets: ["10","10","10"] },
-        { name: "Overhead Rope Extension", sets: ["10","10","10"] },
-        { name: "Preacher Curl", sets: ["10","10","10"] }
-      ],
-      finish: []
-    },
-
-    "3": { title: "Rest Day", morning: [], workout: [], finish: [] },
-
-    "4": {
-      title: "Shoulders",
-      morning: [],
-      workout: [
-        { name: "Push Press (4 sec negative)", sets: ["5","5"] },
-        { name: "Incline DB Press", sets: ["15","15","15"] },
-        { name: "Seated DB Lateral Raise (4 sec negative)", sets: ["8","8"] },
-        { name: "Cable Upright Row", sets: ["10","10","10","10"] },
-        { name: "Standing DB Lateral Raise", sets: ["12","10","8","8"] },
-        { name: "Front Plate Raise", sets: ["10","10"] },
-        { name: "Reverse Pec Deck", sets: ["12","12","12","12"] }
-      ],
-      finish: []
-    },
-
-    "5": {
-      title: "Legs",
-      morning: [],
-      workout: [
-        { name: "Lying Leg Curl", sets: ["6","6","6"] },
-        { name: "Leg Press", sets: ["20","15","10","10"] },
-        { name: "Stiff Leg Deadlift", sets: ["10","10","10","10"] },
-        { name: "Leg Extension", sets: ["12","12","12"] },
-        { name: "Seated Leg Curl", sets: ["12","12","12"] }
-      ],
-      finish: []
-    },
-
     "6": {
-      title: "Glutes Pump",
-      morning: [],
-      workout: [
-        { name: "Banded Hip Thrust", sets: ["20","20"] },
-        { name: "Banded Side Leg Raise", sets: ["8","8"] },
-        { name: "DB Frog Pump", sets: ["30","30"] },
-        { name: "Banded Seated Hip Abduction (Lean Back)", sets: ["30"] },
-        { name: "Banded Seated Hip Abduction (Upright)", sets: ["30"] },
-        { name: "Banded Seated Hip Abduction (Lean Forward)", sets: ["30"] }
+      "title": "Glutes Pump",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Banded Hip Thrust",
+          "sets": [
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Banded Side Leg Raise",
+          "sets": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "DB Frog Pump",
+          "sets": [
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Lean Back)",
+          "sets": [
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Upright)",
+          "sets": [
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Lean Forward)",
+          "sets": [
+            "30"
+          ]
+        }
       ],
-      finish: []
+      "finish": []
     },
-
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
+    "7": {
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    }
+  },
   "4": {
-
     "1": {
-      title: "Legs, Calves & Lower Abs",
-      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
-      workout: [
-        { name: "Leg Press (Giant Set Style)", sets: ["25","20","15","15","10"] },
-        { name: "Smith Squats", sets: ["20","20","20"] },
-        { name: "Walking Lunges", sets: ["20","20","20"] },
-        { name: "Seated Calf Raise", sets: ["30","30","30","30","30"] },
-        { name: "Hanging Leg Raises", sets: ["Failure","Failure","Failure"] },
-        { name: "Decline Situps", sets: ["Failure","Failure","Failure"] }
+      "title": "Glutes & Delts",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Barbell Hip Thrust",
+          "sets": [
+            "10",
+            "5",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Barbell Walking Lunge",
+          "sets": [
+            "10 each leg",
+            "10 each leg",
+            "10 each leg",
+            "10 each leg"
+          ]
+        },
+        {
+          "name": "Back Extension",
+          "sets": [
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Gluteator",
+          "sets": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Lateral Raise Machine",
+          "sets": [
+            "20",
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Alternating DB Front Raise",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Cable Fly",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Six Ways",
+          "sets": [
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+      "finish": []
     },
-
     "2": {
-      title: "Chest & Shoulders",
-      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
-      workout: [
-        { name: "Incline DB Press", sets: ["15","12","10","10"] },
-        { name: "Flat DB Fly", sets: ["15","12","10"] },
-        { name: "Weighted Pushups", sets: ["Failure","Failure","Failure"] },
-        { name: "Barbell Shoulder Press", sets: ["15","12","10","10"] },
-        { name: "Side Raises (Superset)", sets: ["15","15","15"] },
-        { name: "Rear Delt Fly", sets: ["15","15","15"] }
+      "title": "Back & Arms",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Close Grip Pulldown",
+          "sets": [
+            "10-20"
+          ]
+        },
+        {
+          "name": "Chin-Ups",
+          "sets": [
+            "Failure",
+            "Failure"
+          ]
+        },
+        {
+          "name": "Barbell T-Bar Row",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Wide Grip Pulldown",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Close Grip Bench Press",
+          "sets": [
+            "6",
+            "9",
+            "12"
+          ]
+        },
+        {
+          "name": "EZ Bar Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Overhead Rope Extension",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Preacher Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+      "finish": []
     },
-
     "3": {
-      title: "Arms (Superset Focus)",
-      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
-      workout: [
-        { name: "Close Grip Bench Press", sets: ["12","10","10"] },
-        { name: "EZ Bar Curl", sets: ["12","10","10"] },
-        { name: "Overhead Extension", sets: ["12","12","12"] },
-        { name: "Hammer Curl", sets: ["12","12","12"] },
-        { name: "Cable Pushdown", sets: ["15","15","15"] },
-        { name: "Cable Curl", sets: ["15","15","15"] }
-      ],
-      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
     },
-
     "4": {
-      title: "Lower Back, Hamstrings & Upper Abs",
-      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
-      workout: [
-        { name: "Romanian Deadlift", sets: ["15","12","10","10"] },
-        { name: "Seated Ham Curl", sets: ["15","12","10"] },
-        { name: "Hyperextensions", sets: ["15","15","15"] },
-        { name: "Cable Crunch", sets: ["20","20","20"] },
-        { name: "Ab Rollouts", sets: ["15","15","15"] }
+      "title": "Shoulders",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Push Press (4 sec negative)",
+          "sets": [
+            "5",
+            "5"
+          ]
+        },
+        {
+          "name": "Incline DB Press",
+          "sets": [
+            "15",
+            "15",
+            "15"
+          ]
+        },
+        {
+          "name": "Seated DB Lateral Raise (4 sec negative)",
+          "sets": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Cable Upright Row",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Standing DB Lateral Raise",
+          "sets": [
+            "12",
+            "10",
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Front Plate Raise",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Pec Deck",
+          "sets": [
+            "12",
+            "12",
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+      "finish": []
     },
-
     "5": {
-      title: "Upper Back & Calves",
-      morning: [{ name: "AM Cardio", sets: ["35 min"] }],
-      workout: [
-        { name: "Pull-ups", sets: ["Failure","Failure","Failure"] },
-        { name: "Barbell Row", sets: ["12","10","10"] },
-        { name: "Lat Pulldown", sets: ["12","12","12"] },
-        { name: "Barbell Shrugs", sets: ["20","20","20"] },
-        { name: "Standing Calf Press", sets: ["25","25","25","25","25"] }
+      "title": "Legs",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Lying Leg Curl",
+          "sets": [
+            "6",
+            "6",
+            "6"
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "sets": [
+            "20",
+            "15",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Stiff Leg Deadlift",
+          "sets": [
+            "10",
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Leg Extension",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        },
+        {
+          "name": "Seated Leg Curl",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["35 min"] }]
+      "finish": []
     },
-
-    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
-  "4": {
-
-    "1": {
-      title: "Glutes & Delts",
-      morning: [],
-      workout: [
-        { name: "Barbell Hip Thrust", sets: ["10","5","20","20"] },
-        { name: "Barbell Walking Lunge", sets: ["10 each leg","10 each leg","10 each leg","10 each leg"] },
-        { name: "Back Extension", sets: ["30","30"] },
-        { name: "Gluteator", sets: ["20","20","20","20"] },
-        { name: "Lateral Raise Machine", sets: ["20","20","20","20"] },
-        { name: "Alternating DB Front Raise", sets: ["10","10","10","10"] },
-        { name: "Reverse Cable Fly", sets: ["10","10","10","10"] },
-        { name: "Six Ways", sets: ["12","12"] }
-      ],
-      finish: []
-    },
-
-    "2": {
-      title: "Back & Arms",
-      morning: [],
-      workout: [
-        { name: "Close Grip Pulldown", sets: ["10-20"] },
-        { name: "Chin-Ups", sets: ["Failure","Failure"] },
-        { name: "Barbell T-Bar Row", sets: ["10","10"] },
-        { name: "Wide Grip Pulldown", sets: ["10","10"] },
-        { name: "Close Grip Bench Press", sets: ["6","9","12"] },
-        { name: "EZ Bar Curl", sets: ["10","10","10"] },
-        { name: "Overhead Rope Extension", sets: ["10","10","10"] },
-        { name: "Preacher Curl", sets: ["10","10","10"] }
-      ],
-      finish: []
-    },
-
-    "3": { title: "Rest Day", morning: [], workout: [], finish: [] },
-
-    "4": {
-      title: "Shoulders",
-      morning: [],
-      workout: [
-        { name: "Push Press (4 sec negative)", sets: ["5","5"] },
-        { name: "Incline DB Press", sets: ["15","15","15"] },
-        { name: "Seated DB Lateral Raise (4 sec negative)", sets: ["8","8"] },
-        { name: "Cable Upright Row", sets: ["10","10","10","10"] },
-        { name: "Standing DB Lateral Raise", sets: ["12","10","8","8"] },
-        { name: "Front Plate Raise", sets: ["10","10"] },
-        { name: "Reverse Pec Deck", sets: ["12","12","12","12"] }
-      ],
-      finish: []
-    },
-
-    "5": {
-      title: "Legs",
-      morning: [],
-      workout: [
-        { name: "Lying Leg Curl", sets: ["6","6","6"] },
-        { name: "Leg Press", sets: ["20","15","10","10"] },
-        { name: "Stiff Leg Deadlift", sets: ["10","10","10","10"] },
-        { name: "Leg Extension", sets: ["12","12","12"] },
-        { name: "Seated Leg Curl", sets: ["12","12","12"] }
-      ],
-      finish: []
-    },
-
     "6": {
-      title: "Glutes Pump",
-      morning: [],
-      workout: [
-        { name: "Banded Hip Thrust", sets: ["20","20"] },
-        { name: "Banded Side Leg Raise", sets: ["8","8"] },
-        { name: "DB Frog Pump", sets: ["30","30"] },
-        { name: "Banded Seated Hip Abduction (Lean Back)", sets: ["30"] },
-        { name: "Banded Seated Hip Abduction (Upright)", sets: ["30"] },
-        { name: "Banded Seated Hip Abduction (Lean Forward)", sets: ["30"] }
+      "title": "Glutes Pump",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Banded Hip Thrust",
+          "sets": [
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Banded Side Leg Raise",
+          "sets": [
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "DB Frog Pump",
+          "sets": [
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Lean Back)",
+          "sets": [
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Upright)",
+          "sets": [
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction (Lean Forward)",
+          "sets": [
+            "30"
+          ]
+        }
       ],
-      finish: []
+      "finish": []
     },
-
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
+    "7": {
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    }
+  },
   "5": {
-
     "1": {
-      title: "Quads, Calves & Lower Abs (DTPXtreme)",
-      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
-      workout: [
-        { name: "Leg Extensions DTPXtreme", sets: ["30","20","10","10","20","30"] },
-        { name: "Hack Squats (Narrow Stance)", sets: ["30","25","20"] },
-        { name: "Reverse Hack Squats (Narrow Stance)", sets: ["20","25","30"] },
-        { name: "Leg Press DTPXtreme", sets: ["30","20","10","10","20","30"] },
-        { name: "Seated Calf Raises DTPXtreme", sets: ["30","20","10","10","20","30"] },
-        { name: "Hanging Windshield Wipers", sets: ["Failure","Failure","Failure","Failure","Failure"] },
-        { name: "Lying Windshield Wipers", sets: ["Failure","Failure","Failure","Failure","Failure"] }
+      "title": "Glutes",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Barbell Glute Bridge (Dropset)",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Gluteator",
+          "sets": [
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Bulgarian Split Squat",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Stiff-Legged Deadlift",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Lying Hip Abduction",
+          "sets": [
+            "30",
+            "30"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+      "finish": []
     },
-
     "2": {
-      title: "Chest & Shoulders (DTPXtreme)",
-      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
-      workout: [
-        { name: "Incline Dumbbell Press", sets: ["30","20","10","10","20","30"] },
-        { name: "Decline Dumbbell Press", sets: ["30","20","10","10","20","30"] },
-        { name: "Flat Chest Press Machine", sets: ["30","20","10","10","20","30"] },
-        { name: "Front Plate Raises", sets: ["30","20","10","10","20","30"] },
-        { name: "Bent-Over Reverse Plate Flyes", sets: ["30","20","10","10","20","30"] },
-        { name: "Side Lateral Plate Raises", sets: ["30","20","10","10","20","30"] }
+      "title": "Delts & Abs",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Seated Barbell Military Press",
+          "sets": [
+            "8",
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Upright Cable Row",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Delt Blaster",
+          "sets": [
+            "10/10/10",
+            "10/10/10",
+            "10/10/10"
+          ]
+        },
+        {
+          "name": "Seated Six Ways",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Hanging Leg Raise",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Cable Crunch",
+          "sets": [
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Decline Weighted Sit-up",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+      "finish": []
     },
-
     "3": {
-      title: "Arms (DTPXtreme Supersets)",
-      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
-      workout: [
-        { name: "Triceps Extensions", sets: ["30","25","20","20","25","30"] },
-        { name: "Dumbbell Biceps Curl", sets: ["20","15","10","10","15","20"] },
-        { name: "EZ Bar Skull Crushers", sets: ["30","25","20","20","25","30"] },
-        { name: "Cable EZ Bar Preacher Curls", sets: ["20","15","10","10","15","20"] },
-        { name: "Dips", sets: ["30","25","20","20","25","30"] },
-        { name: "Hammer Curls", sets: ["20","15","10","10","15","20"] }
-      ],
-      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
     },
-
     "4": {
-      title: "Lower Back, Hamstrings & Upper Abs (DTPXtreme)",
-      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
-      workout: [
-        { name: "Deadlifts", sets: ["15","10","5","5","10","15"] },
-        { name: "Lying Leg Curls", sets: ["30","20","10","10","20","30"] },
-        { name: "Seated Leg Curls", sets: ["30","20","10","10","20","30"] },
-        { name: "Standing Cable Crunches", sets: ["30","30","30","30","30"] },
-        { name: "Exercise Ball Alternating Crunches", sets: ["30","30","30","30","30"] }
+      "title": "Chest & Back",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Weighted Chin-up",
+          "sets": [
+            "3",
+            "3",
+            "3"
+          ]
+        },
+        {
+          "name": "Close-Grip Bench Press",
+          "sets": [
+            "8",
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Inverted Row",
+          "sets": [
+            "Failure",
+            "Failure",
+            "Failure"
+          ]
+        },
+        {
+          "name": "One-Arm Dumbbell Row",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Seated Face Pull",
+          "sets": [
+            "12",
+            "12"
+          ]
+        },
+        {
+          "name": "EZ-Bar Curl / Skullcrusher Superset",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+      "finish": []
     },
-
     "5": {
-      title: "Upper Back & Calves (DTPXtreme)",
-      morning: [{ name: "AM Cardio", sets: ["40 min"] }],
-      workout: [
-        { name: "Pull-ups", sets: ["20","15","10","10","15","20"] },
-        { name: "T-Bar Rows", sets: ["20","15","10","10","15","20"] },
-        { name: "Seated Machine Row", sets: ["20","15","10","10","15","20"] },
-        { name: "Machine Shrugs", sets: ["30","20","10","10","20","30"] },
-        { name: "Calf Raise Machine", sets: ["30","20","10","10","20","30"] }
+      "title": "Legs",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Single-Leg Press",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Standing Leg Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Goblet Squat",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Back Extension",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Calf Raise",
+          "sets": [
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["40 min"] }]
+      "finish": []
     },
-
-    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
-  "5": {
-
-    "1": {
-      title: "Quads, Calves & Lower Abs (DTP)",
-      morning: [],
-      workout: [
-        { name: "Leg Extensions (DTP)", sets: ["30","20","10","10","20","30"] },
-        { name: "Hack Squats (Narrow)", sets: ["30","25","20"] },
-        { name: "Reverse Hack Squats", sets: ["20","25","30"] },
-        { name: "Leg Press (DTP)", sets: ["30","20","10","10","20","30"] },
-        { name: "Seated Calf Raise (DTP)", sets: ["30","20","10","10","20","30"] },
-        { name: "Hanging Windshield Wipers", sets: ["Failure","Failure","Failure","Failure","Failure"] },
-        { name: "Lying Windshield Wipers", sets: ["Failure","Failure","Failure","Failure","Failure"] }
-      ],
-      finish: []
-    },
-
-    "2": {
-      title: "Chest & Shoulders (DTP)",
-      morning: [],
-      workout: [
-        { name: "Incline DB Press", sets: ["30","20","10","10","20","30"] },
-        { name: "Decline DB Press", sets: ["30","20","10","10","20","30"] },
-        { name: "Flat Chest Press Machine", sets: ["30","20","10","10","20","30"] },
-        { name: "Front Plate Raise", sets: ["30","20","10","10","20","30"] },
-        { name: "Bent-Over Reverse Plate Fly", sets: ["30","20","10","10","20","30"] },
-        { name: "Side Lateral Plate Raise", sets: ["30","20","10","10","20","30"] }
-      ],
-      finish: []
-    },
-
-    "3": {
-      title: "Arms (DTP Supersets)",
-      morning: [],
-      workout: [
-        { name: "Triceps Extension", sets: ["30","25","20","20","25","30"] },
-        { name: "DB Biceps Curl", sets: ["20","15","10","10","15","20"] },
-        { name: "EZ Bar Skull Crushers", sets: ["30","25","20","20","25","30"] },
-        { name: "Cable EZ Bar Preacher Curl", sets: ["20","15","10","10","15","20"] },
-        { name: "Dips", sets: ["30","25","20","20","25","30"] },
-        { name: "Hammer Curl", sets: ["20","15","10","10","15","20"] }
-      ],
-      finish: []
-    },
-
-    "4": { title: "Rest Day", morning: [], workout: [], finish: [] },
-
-    "5": {
-      title: "Lower Back, Hamstrings & Upper Abs (DTP)",
-      morning: [],
-      workout: [
-        { name: "Deadlifts", sets: ["15","10","5","5","10","15"] },
-        { name: "Lying Leg Curl", sets: ["30","20","10","10","20","30"] },
-        { name: "Seated Leg Curl", sets: ["30","20","10","10","20","30"] },
-        { name: "Standing Cable Crunch", sets: ["30","30","30","30","30"] },
-        { name: "Exercise Ball Alternating Crunch", sets: ["30","30","30","30","30"] }
-      ],
-      finish: []
-    },
-
     "6": {
-      title: "Upper Back & Calves (DTP)",
-      morning: [],
-      workout: [
-        { name: "Pull-Ups", sets: ["20","15","10","10","15","20"] },
-        { name: "T-Bar Row", sets: ["20","15","10","10","15","20"] },
-        { name: "Seated Machine Row", sets: ["20","15","10","10","15","20"] },
-        { name: "Machine Shrugs", sets: ["30","20","10","10","20","30"] },
-        { name: "Calf Raise Machine", sets: ["30","20","10","10","20","30"] }
+      "title": "Delts & Glutes",
+      "morning": [],
+      "workout": [
+        {
+          "name": "One-Arm Cable Lateral Raise",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Barbell Front Raise",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Pec Deck",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        },
+        {
+          "name": "Banded Barbell Glute Bridge",
+          "sets": [
+            "30",
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction",
+          "sets": [
+            "30",
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Dumbbell Frog Pump",
+          "sets": [
+            "30",
+            "30",
+            "30"
+          ]
+        }
       ],
-      finish: []
+      "finish": []
     },
-
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
+    "7": {
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    }
+  },
   "6": {
-
     "1": {
-      title: "Quads & Calves",
-      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
-      workout: [
-        { name: "Leg Extensions", sets: ["20","15","10"] },
-        { name: "Squats", sets: ["20","25","30"] },
-        { name: "Leg Press", sets: ["20","15","10"] },
-        { name: "Hack Squats", sets: ["20","15","10"] },
-        { name: "Seated Calf Raises", sets: ["30","25","20","10","15","20"] }
+      "title": "Glutes",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Barbell Glute Bridge (Dropset)",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Gluteator",
+          "sets": [
+            "20",
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Bulgarian Split Squat",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Stiff-Legged Deadlift",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Lying Hip Abduction",
+          "sets": [
+            "30",
+            "30"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+      "finish": []
     },
-
     "2": {
-      title: "Chest & Shoulders",
-      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
-      workout: [
-        { name: "Flat Dumbbell Press", sets: ["30","20","10"] },
-        { name: "Incline Dumbbell Flyes", sets: ["10","15","20"] },
-        { name: "Decline Smith Machine Press", sets: ["30","20","10"] },
-        { name: "Cable Crossover", sets: ["10","15","20","30"] },
-        { name: "Incline Front Barbell Raises", sets: ["30","20","10"] },
-        { name: "Incline Front Dumbbell Raises", sets: ["10","15","20"] },
-        { name: "Incline Rear Delt Flyes", sets: ["30","20","10"] },
-        { name: "Incline Bench Rear Dumbbell Flyes", sets: ["10","15","20"] },
-        { name: "Dumbbell Lateral Raise", sets: ["30","20","10"] },
-        { name: "Seated Side Lateral Dumbbell Raises", sets: ["10","15","20"] }
+      "title": "Delts & Abs",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Seated Barbell Military Press",
+          "sets": [
+            "8",
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Upright Cable Row",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Delt Blaster",
+          "sets": [
+            "10/10/10",
+            "10/10/10",
+            "10/10/10"
+          ]
+        },
+        {
+          "name": "Seated Six Ways",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Hanging Leg Raise",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Cable Crunch",
+          "sets": [
+            "20",
+            "20"
+          ]
+        },
+        {
+          "name": "Decline Weighted Sit-up",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+      "finish": []
     },
-
     "3": {
-      title: "Arms",
-      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
-      workout: [
-        { name: "Machine Preacher Curls", sets: ["30","20","10"] },
-        { name: "Rope Pressdown", sets: ["10","15","20"] },
-        { name: "Reverse-Grip Triceps Extensions", sets: ["30","20","10"] },
-        { name: "Reverse-Grip Cable Biceps Curl", sets: ["20","25","30"] },
-        { name: "Smith Machine Drag Curl", sets: ["30","20","10"] },
-        { name: "Smith Machine Close-Grip Bench Press", sets: ["20","25","30"] },
-        { name: "Incline Overhead Dumbbell Extensions", sets: ["30","20","10"] },
-        { name: "Spider Curls", sets: ["20","25","30"] }
-      ],
-      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
     },
-
     "4": {
-      title: "Lower Back, Hamstrings & Upper Abs",
-      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
-      workout: [
-        { name: "Glute-Ham Raise", sets: ["30","20","10"] },
-        { name: "Seated Leg Curls", sets: ["20","25","30"] },
-        { name: "Lying Cable Hamstring Curl", sets: ["30","20","10"] },
-        { name: "Reverse Hack Squat", sets: ["20","25","30"] },
-        { name: "Hyperextensions", sets: ["30","20","10"] },
-        { name: "Dumbbell Deadlifts", sets: ["20","25","30"] },
-        { name: "Exercise Ball Cable Crunches", sets: ["Failure"] },
-        { name: "Ab Wheel Rollouts", sets: ["Failure"] }
+      "title": "Chest & Back",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Weighted Chin-up",
+          "sets": [
+            "3",
+            "3",
+            "3"
+          ]
+        },
+        {
+          "name": "Close-Grip Bench Press",
+          "sets": [
+            "8",
+            "8",
+            "8"
+          ]
+        },
+        {
+          "name": "Inverted Row",
+          "sets": [
+            "Failure",
+            "Failure",
+            "Failure"
+          ]
+        },
+        {
+          "name": "One-Arm Dumbbell Row",
+          "sets": [
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Seated Face Pull",
+          "sets": [
+            "12",
+            "12"
+          ]
+        },
+        {
+          "name": "EZ-Bar Curl / Skullcrusher Superset",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+      "finish": []
     },
-
     "5": {
-      title: "Upper Back & Calves",
-      morning: [{ name: "AM Cardio", sets: ["45 min"] }],
-      workout: [
-        { name: "Machine Pullover", sets: ["30","20","10"] },
-        { name: "Straight-Arm Dumbbell Pullover", sets: ["20","25","30"] },
-        { name: "Straight-Arm Pulldown", sets: ["30","20","10"] },
-        { name: "Lat Pulldown", sets: ["20","25","30"] },
-        { name: "Machine Shrugs", sets: ["30","20","10","20","25","30"] },
-        { name: "Standing Calf Raise", sets: ["30","20","10"] },
-        { name: "Donkey Calf Raises", sets: ["20","25","30"] }
+      "title": "Legs",
+      "morning": [],
+      "workout": [
+        {
+          "name": "Single-Leg Press",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Standing Leg Curl",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Goblet Squat",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Back Extension",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Calf Raise",
+          "sets": [
+            "10",
+            "10"
+          ]
+        }
       ],
-      finish: [{ name: "PM Cardio", sets: ["45 min"] }]
+      "finish": []
     },
-
-    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
+    "6": {
+      "title": "Glutes & Delts",
+      "morning": [],
+      "workout": [
+        {
+          "name": "One-Arm Cable Lateral Raise",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Barbell Front Raise",
+          "sets": [
+            "10",
+            "10",
+            "10"
+          ]
+        },
+        {
+          "name": "Reverse Pec Deck",
+          "sets": [
+            "12",
+            "12",
+            "12"
+          ]
+        },
+        {
+          "name": "Banded Barbell Glute Bridge",
+          "sets": [
+            "30",
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Banded Seated Hip Abduction",
+          "sets": [
+            "30",
+            "30",
+            "30"
+          ]
+        },
+        {
+          "name": "Dumbbell Frog Pump",
+          "sets": [
+            "30",
+            "30",
+            "30"
+          ]
+        }
+      ],
+      "finish": []
+    },
+    "7": {
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    }
+  },
   "7": {
-
     "1": {
-      title: "Quads, Calves & Lower Abs (Superset Phase)",
-      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
-      workout: [
-        { name: "Leg Extensions", sets: ["20","15","10"] },
-        { name: "Seated Leg Press", sets: ["20","15","10"] },
-        { name: "Hack Squat", sets: ["20","15","10"] },
-        { name: "Barbell Squat", sets: ["20","15","10"] },
-        { name: "Seated Calf Raises", sets: ["20","25","30"] },
-        { name: "Flat Bench Lying Leg Raise", sets: ["Failure","Failure","Failure"] }
+      "title": "Glutes",
+      "morning": [],
+      "workout": [
+        {"name": "Barbell Glute Bridge (Dropset)", "sets": ["10","10","10"]},
+        {"name": "Gluteator", "sets": ["20","20","20"]},
+        {"name": "Bulgarian Split Squat", "sets": ["10","10","10"]},
+        {"name": "Stiff-Legged Deadlift", "sets": ["10","10","10"]},
+        {"name": "Lying Hip Abduction", "sets": ["30","30"]}
       ],
-      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+      "finish": []
     },
-
     "2": {
-      title: "Chest & Shoulders (Superset Phase)",
-      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
-      workout: [
-        { name: "Incline Dumbbell Press", sets: ["20","15","10"] },
-        { name: "Flat Dumbbell Press", sets: ["20","15","10"] },
-        { name: "Cable Crossover", sets: ["20","15","10"] },
-        { name: "Smith Machine Press", sets: ["20","15","10"] },
-        { name: "Front Raises", sets: ["20","15","10"] },
-        { name: "Side Lateral Raises", sets: ["20","15","10"] }
+      "title": "Delts & Abs",
+      "morning": [],
+      "workout": [
+        {"name": "Seated Barbell Military Press", "sets": ["8","8","8"]},
+        {"name": "Upright Cable Row", "sets": ["10","10","10"]},
+        {"name": "Delt Blaster", "sets": ["10/10/10","10/10/10","10/10/10"]},
+        {"name": "Seated Six Ways", "sets": ["10","10","10"]},
+        {"name": "Hanging Leg Raise", "sets": ["10","10","10"]},
+        {"name": "Cable Crunch", "sets": ["20","20"]},
+        {"name": "Decline Weighted Sit-up", "sets": ["10","10","10"]}
       ],
-      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+      "finish": []
     },
-
     "3": {
-      title: "Arms (Superset Focus)",
-      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
-      workout: [
-        { name: "EZ Bar Curl", sets: ["20","15","10"] },
-        { name: "Rope Pushdown", sets: ["20","15","10"] },
-        { name: "Preacher Curl", sets: ["20","15","10"] },
-        { name: "Overhead Extension", sets: ["20","15","10"] },
-        { name: "Hammer Curl", sets: ["20","15","10"] },
-        { name: "Dips", sets: ["Failure","Failure","Failure"] }
-      ],
-      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
     },
-
     "4": {
-      title: "Lower Back, Hamstrings & Upper Abs",
-      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
-      workout: [
-        { name: "Romanian Deadlift", sets: ["20","15","10"] },
-        { name: "Lying Leg Curl", sets: ["20","15","10"] },
-        { name: "Seated Leg Curl", sets: ["20","15","10"] },
-        { name: "Cable Crunch", sets: ["25","25","25"] },
-        { name: "Ab Rollouts", sets: ["Failure","Failure","Failure"] }
+      "title": "Chest & Back",
+      "morning": [],
+      "workout": [
+        {"name": "Weighted Chin-up", "sets": ["3","3","3"]},
+        {"name": "Close-Grip Bench Press", "sets": ["8","8","8"]},
+        {"name": "Inverted Row", "sets": ["Failure","Failure","Failure"]},
+        {"name": "One-Arm Dumbbell Row", "sets": ["10","10"]},
+        {"name": "Seated Face Pull", "sets": ["12","12"]},
+        {"name": "EZ-Bar Curl / Skullcrusher Superset", "sets": ["10","10","10"]}
       ],
-      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+      "finish": []
     },
-
     "5": {
-      title: "Upper Back & Calves",
-      morning: [{ name: "AM Cardio", sets: ["50 min"] }],
-      workout: [
-        { name: "Pull-ups", sets: ["20","15","10"] },
-        { name: "Barbell Rows", sets: ["20","15","10"] },
-        { name: "Lat Pulldown", sets: ["20","15","10"] },
-        { name: "Machine Shrugs", sets: ["20","25","30"] },
-        { name: "Standing Calf Raise", sets: ["20","25","30"] }
+      "title": "Legs",
+      "morning": [],
+      "workout": [
+        {"name": "Single-Leg Press", "sets": ["10","10","10"]},
+        {"name": "Leg Press", "sets": ["10","10","10"]},
+        {"name": "Standing Leg Curl", "sets": ["10","10","10"]},
+        {"name": "Goblet Squat", "sets": ["10","10","10"]},
+        {"name": "Back Extension", "sets": ["10","10","10"]},
+        {"name": "Calf Raise", "sets": ["10","10"]}
       ],
-      finish: [{ name: "PM Cardio", sets: ["50 min"] }]
+      "finish": []
     },
+    "6": {
+      "title": "Delts & Glutes",
+      "morning": [],
+      "workout": [
+        {"name": "One-Arm Cable Lateral Raise", "sets": ["10","10","10"]},
+        {"name": "Barbell Front Raise", "sets": ["10","10","10"]},
+        {"name": "Reverse Pec Deck", "sets": ["12","12","12"]},
+        {"name": "Banded Barbell Glute Bridge", "sets": ["30","30","30"]},
+        {"name": "Banded Seated Hip Abduction", "sets": ["30","30","30"]},
+        {"name": "Dumbbell Frog Pump", "sets": ["30","30","30"]}
+      ],
+      "finish": []
+    },
+    "7": {
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    }
+  },
 
-    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
-  }
-
-,
   "8": {
-
     "1": {
-      title: "Quads, Calves & Lower Abs (Final Phase)",
-      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
-      workout: [
-        { name: "Leg Extensions", sets: ["30","20","10","10","20","30"] },
-        { name: "Sissy Squats", sets: ["Failure","Failure","Failure"] },
-        { name: "Leg Press", sets: ["30","20","10","10","20","30"] },
-        { name: "Seated Calf Raise", sets: ["30","20","10","10","20","30"] },
-        { name: "Hanging Leg Raises", sets: ["Failure","Failure","Failure"] }
+      "title": "Glutes",
+      "morning": [],
+      "workout": [
+        {"name": "Barbell Glute Bridge (Dropset)", "sets": ["10","10","10"]},
+        {"name": "Gluteator", "sets": ["20","20","20"]},
+        {"name": "Bulgarian Split Squat", "sets": ["10","10","10"]},
+        {"name": "Stiff-Legged Deadlift", "sets": ["10","10","10"]},
+        {"name": "Lying Hip Abduction", "sets": ["30","30"]}
       ],
-      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+      "finish": []
     },
-
     "2": {
-      title: "Chest & Shoulders (Final Phase)",
-      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
-      workout: [
-        { name: "Incline Dumbbell Press", sets: ["30","20","10","10","20","30"] },
-        { name: "Flat Dumbbell Fly", sets: ["30","20","10","10","20","30"] },
-        { name: "Cable Crossover", sets: ["30","20","10","10","20","30"] },
-        { name: "Barbell Shoulder Press", sets: ["30","20","10","10","20","30"] },
-        { name: "Side Lateral Raise", sets: ["30","20","10","10","20","30"] }
+      "title": "Delts & Abs",
+      "morning": [],
+      "workout": [
+        {"name": "Seated Barbell Military Press", "sets": ["8","8","8"]},
+        {"name": "Upright Cable Row", "sets": ["10","10","10"]},
+        {"name": "Delt Blaster", "sets": ["10/10/10","10/10/10","10/10/10"]},
+        {"name": "Seated Six Ways", "sets": ["10","10","10"]},
+        {"name": "Hanging Leg Raise", "sets": ["10","10","10"]},
+        {"name": "Cable Crunch", "sets": ["20","20"]},
+        {"name": "Decline Weighted Sit-up", "sets": ["10","10","10"]}
       ],
-      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+      "finish": []
     },
-
     "3": {
-      title: "Arms (Final Phase)",
-      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
-      workout: [
-        { name: "EZ Bar Curl", sets: ["30","20","10","10","20","30"] },
-        { name: "Cable Pushdown", sets: ["30","20","10","10","20","30"] },
-        { name: "Preacher Curl", sets: ["30","20","10","10","20","30"] },
-        { name: "Overhead Triceps Extension", sets: ["30","20","10","10","20","30"] }
-      ],
-      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+      "title": "Rest Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
     },
-
     "4": {
-      title: "Lower Back, Hamstrings & Upper Abs (Final Phase)",
-      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
-      workout: [
-        { name: "Romanian Deadlift", sets: ["30","20","10","10","20","30"] },
-        { name: "Lying Leg Curl", sets: ["30","20","10","10","20","30"] },
-        { name: "Hyperextensions", sets: ["30","20","10"] },
-        { name: "Cable Crunch", sets: ["Failure","Failure","Failure"] }
+      "title": "Chest & Back",
+      "morning": [],
+      "workout": [
+        {"name": "Weighted Chin-up", "sets": ["3","3","3"]},
+        {"name": "Close-Grip Bench Press", "sets": ["8","8","8"]},
+        {"name": "Inverted Row", "sets": ["Failure","Failure","Failure"]},
+        {"name": "One-Arm Dumbbell Row", "sets": ["10","10"]},
+        {"name": "Seated Face Pull", "sets": ["12","12"]},
+        {"name": "EZ-Bar Curl / Skullcrusher Superset", "sets": ["10","10","10"]}
       ],
-      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+      "finish": []
     },
-
     "5": {
-      title: "Upper Back & Calves (Final Phase)",
-      morning: [{ name: "AM Cardio", sets: ["55 min"] }],
-      workout: [
-        { name: "Pull-ups", sets: ["Failure","Failure","Failure"] },
-        { name: "Barbell Rows", sets: ["30","20","10","10","20","30"] },
-        { name: "Lat Pulldown", sets: ["30","20","10","10","20","30"] },
-        { name: "Standing Calf Raise", sets: ["30","20","10","10","20","30"] }
+      "title": "Legs",
+      "morning": [],
+      "workout": [
+        {"name": "Single-Leg Press", "sets": ["10","10","10"]},
+        {"name": "Leg Press", "sets": ["10","10","10"]},
+        {"name": "Standing Leg Curl", "sets": ["10","10","10"]},
+        {"name": "Goblet Squat", "sets": ["10","10","10"]},
+        {"name": "Back Extension", "sets": ["10","10","10"]},
+        {"name": "Calf Raise", "sets": ["10","10"]}
       ],
-      finish: [{ name: "PM Cardio", sets: ["55 min"] }]
+      "finish": []
     },
-
-    "6": { title: "Rest Day", morning: [], workout: [], finish: [] },
-    "7": { title: "Rest Day", morning: [], workout: [], finish: [] }
-
+    "6": {
+      "title": "Delts & Glutes",
+      "morning": [],
+      "workout": [
+        {"name": "One-Arm Cable Lateral Raise", "sets": ["10","10","10"]},
+        {"name": "Barbell Front Raise", "sets": ["10","10","10"]},
+        {"name": "Reverse Pec Deck", "sets": ["12","12","12"]},
+        {"name": "Banded Barbell Glute Bridge", "sets": ["30","30","30"]},
+        {"name": "Banded Seated Hip Abduction", "sets": ["30","30","30"]},
+        {"name": "Dumbbell Frog Pump", "sets": ["30","30","30"]}
+      ],
+      "finish": []
+    },
+    "7": {
+      "title": "Final Day",
+      "morning": [],
+      "workout": [],
+      "finish": []
+    }
   }
 
 };
+
 
 
 function safe(s){return String(s).replace(/</g,"&lt;").replace(/>/g,"&gt;");}
@@ -1323,8 +2278,7 @@ function renderPlan(){
   renderProgress(plan);
 }
 
-state.week = 1;
-weekSelect.value = "1";
+weekSelect.value = String(state.week);
 daySelect.value = String(state.day);
 weekSelect.addEventListener("change", ()=>{ state.week = Number(weekSelect.value); saveState(); renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
 daySelect.addEventListener("change", ()=>{ state.day = Number(daySelect.value); saveState(); renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
@@ -1362,75 +2316,5 @@ document.addEventListener("click", function(e){
 });
 </script>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const THIS_PROGRAM = 'bikini';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCTQDlsZNhZ-I6CvlNgZDPgpJJYlYto6Rk",
-  authDomain: "jalandhar-fitness-club.firebaseapp.com",
-  projectId: "jalandhar-fitness-club",
-  storageBucket: "jalandhar-fitness-club.firebasestorage.app",
-  messagingSenderId: "899365845803",
-  appId: "1:899365845803:web:a75a331462df8b017f236e"
-};
-
-initializeApp(firebaseConfig);
-const auth = getAuth();
-
-async function getMemberData(email) {
-  try {
-    const res  = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRCqo3ulVGf4U41yNtpBOrSESFfOBsi7M4WRHUDzqyU_poz9QPGEUhCN7xvJKzevmtIrnKxrEM-Qy1h/pub?output=csv");
-    const text = await res.text();
-    const rows = text.split("\n").map(r => r.trim()).filter(r => r && !r.toLowerCase().startsWith("email"));
-    for (let row of rows) {
-      const cols = row.split(",");
-      if ((cols[0]||"").trim().toLowerCase() === email.toLowerCase()) {
-        return {
-          program:  (cols[1]||"").trim().toLowerCase(),
-          expiry:   (cols[2]||"").trim(),
-          approved: ['yes','true'].includes((cols[3]||"").trim().toLowerCase()),
-          revoked:  ['yes','true'].includes((cols[4]||"").trim().toLowerCase()),
-        };
-      }
-    }
-  } catch(e) {}
-  return null;
-}
-
-function showAccessDenied(reason) {
-  const overlay = document.createElement('div');
-  overlay.style.cssText = 'position:fixed;inset:0;background:#000;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased;';
-  overlay.innerHTML = `
-    <div style="width:64px;height:64px;border-radius:50%;border:1.5px solid rgba(224,85,85,0.5);background:rgba(224,85,85,0.07);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px">✕</div>
-    <div style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;letter-spacing:1px;color:#fff;margin-bottom:10px">Access Denied</div>
-    <div style="font-size:13px;color:rgba(255,255,255,0.4);max-width:280px;line-height:1.7;margin-bottom:28px">${reason}</div>
-    <button onclick="window.location.href='dashboard.html'" style="padding:13px 28px;border-radius:11px;border:none;background:#fff;color:#000;font-family:'Cinzel',serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;margin-bottom:10px">Go to Dashboard</button>
-    <button onclick="window.location.href='programs.html'" style="padding:12px 28px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);background:transparent;color:rgba(255,255,255,0.4);font-size:12px;cursor:pointer;font-family:Inter,sans-serif" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Browse Programs</button>
-  `;
-  document.body.appendChild(overlay);
-}
-
-onAuthStateChanged(auth, async (user) => {
-  if (!user) { window.location.href = "login.html"; return; }
-  const data = await getMemberData(user.email);
-  if (!data) { window.location.href = "dashboard.html"; return; }
-  if (!data.approved) { window.location.href = "dashboard.html"; return; }
-  if (data.revoked) { showAccessDenied("Your access has been revoked. Please contact us or purchase a new program."); return; }
-  if (data.expiry && new Date() > new Date(data.expiry)) { showAccessDenied("Your program access has expired. Purchase a new program to continue training."); return; }
-  if (data.program !== THIS_PROGRAM) {
-    if (data.program) {
-      const routes = { shred:'shred.html', strength:'strength.html', bikini:'bikini.html', p4:'p4.html', p5:'p5.html', p6:'p6.html', p7:'p7.html', p8:'p8.html', p9:'p9.html', p10:'p10.html' };
-      const f = routes[data.program]; if (f) { window.location.href = f; return; }
-    }
-    showAccessDenied("You don't have access to this program. Check your dashboard to see what you've purchased.");
-    return;
-  }
-  // ✅ Access granted
-});
-</script>
 </body>
 </html>

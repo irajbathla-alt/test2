@@ -934,11 +934,21 @@ function renderPlan(){
   renderProgress(plan);
 }
 
-state.week = 1;
-weekSelect.value = "1";
+
+
+
+weekSelect.addEventListener("change", ()=>{ state.week = Number(weekSelect.value); saveState(); 
+// Load saved week/day correctly
+weekSelect.value = String(state.week);
 daySelect.value = String(state.day);
-weekSelect.addEventListener("change", ()=>{ state.week = Number(weekSelect.value); saveState(); renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
-daySelect.addEventListener("change", ()=>{ state.day = Number(daySelect.value); saveState(); renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
+
+renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
+daySelect.addEventListener("change", ()=>{ state.day = Number(daySelect.value); saveState(); 
+// Load saved week/day correctly
+weekSelect.value = String(state.week);
+daySelect.value = String(state.day);
+
+renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
 
 document.getElementById("resetBtn").addEventListener("click",()=>{
   const plan = (SPLIT[String(state.week)]||{})[String(state.day)];
@@ -956,6 +966,11 @@ document.getElementById("markAllBtn").addEventListener("click",()=>{
   document.querySelectorAll(".chip").forEach(el=>el.classList.add("checked"));
   renderProgress(plan);
 });
+
+
+// Load saved week/day correctly
+weekSelect.value = String(state.week);
+daySelect.value = String(state.day);
 
 renderPlan();
 </script>

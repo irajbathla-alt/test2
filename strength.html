@@ -938,13 +938,13 @@ function renderPlan(){
 
 
 weekSelect.addEventListener("change", ()=>{ state.week = Number(weekSelect.value); saveState(); 
-// Load saved week/day correctly
+// Proper initialization from saved state
 weekSelect.value = String(state.week);
 daySelect.value = String(state.day);
 
 renderPlan(); window.scrollTo({top:0,behavior:"smooth"}); });
 daySelect.addEventListener("change", ()=>{ state.day = Number(daySelect.value); saveState(); 
-// Load saved week/day correctly
+// Proper initialization from saved state
 weekSelect.value = String(state.week);
 daySelect.value = String(state.day);
 
@@ -968,7 +968,7 @@ document.getElementById("markAllBtn").addEventListener("click",()=>{
 });
 
 
-// Load saved week/day correctly
+// Proper initialization from saved state
 weekSelect.value = String(state.week);
 daySelect.value = String(state.day);
 

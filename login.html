@@ -157,7 +157,7 @@ const auth = getAuth(initializeApp({
 
 window._fbSignIn = (e, p) => {
   signInWithEmailAndPassword(auth, e, p)
-    .then(() => window.location.href = '/Jalandhar-Fitness-Club/dashboard.html')
+    .then(() => window.location.href = 'dashboard.html')
     .catch(err => {
       setMsg(err.code === 'auth/invalid-credential'
         ? 'Incorrect email or password.' : err.message, 'error');
